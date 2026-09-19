@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>MCC Bookstore</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+<div th:fragment="header">
+    <header><h1>MCC Bookstore</h1></header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Book Search</a>
+        <a href="#">Add Book</a>
+    </nav>
+</div>
+
+</body>
+
+<footer th:fragment="footer">
+    @ MCC Bookstore 2026<br>
+    <a herf="mailto:info@mccbookstore.com">Contact Us></a>
+</footer>
+
+
+</html>
