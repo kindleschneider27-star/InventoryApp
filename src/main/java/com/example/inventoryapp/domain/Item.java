@@ -80,4 +80,21 @@ public class Item {
     public void setImage(Image image) {
         this.image = image;
     }
+
+    public boolean hasImage() {
+        return image != null && image.getContents().length >0;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", price=" + price +
+                ", inventory=" + inventory +
+                ", type=" + type +
+                ", image=" + image +
+                '}';
+    }
 }
