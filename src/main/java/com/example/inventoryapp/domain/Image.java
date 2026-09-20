@@ -1,5 +1,7 @@
 package com.example.inventoryapp.domain;
 
+import java.util.Base64;
+
 public class Image {
     private String name;
     private String encoding;
@@ -39,5 +41,12 @@ public class Image {
 
     public void setContents(byte[] contents) {
         this.contents = contents;
+    }
+
+    public String getDataUri(){
+        if (contents == null || contents.length == 0){
+            return null;
+        }
+        return "data:" + encoding + ";base64," + Base64.getEncoder().encodeToString(contents);
     }
 }

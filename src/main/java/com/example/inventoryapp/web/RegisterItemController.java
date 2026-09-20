@@ -38,7 +38,7 @@ public class RegisterItemController {
 
         if(item.hasImage()){
             String imageName = item.getImage().getName();
-            imageName = item.getName() + imageName.substring(0, imageName.lastIndexOf('.'));
+            imageName = item.getName() + imageName.substring(imageName.lastIndexOf('.'));
             item.getImage().setName(imageName);
         }
         itemDB.addItem(item);

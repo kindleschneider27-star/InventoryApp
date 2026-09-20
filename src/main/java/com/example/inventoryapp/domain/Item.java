@@ -1,6 +1,5 @@
 package com.example.inventoryapp.domain;
 
-import java.awt.*;
 import java.util.UUID;
 
 public class Item {

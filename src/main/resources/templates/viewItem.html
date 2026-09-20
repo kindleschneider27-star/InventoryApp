@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace ="~{fragments :: head}"></head>
+
+<body id = "pageCenter">
+
+<div th:replace = "~{fragments :: header}"></div>
+
+<main>
+    <aside class ="imageRight">
+        <img th:if = "${current.hasImage()}" th:src = "${current.image.getDataUri()}" alt = "Image of item"/>
+        <img th:unless="${current.hasImage()}" th:src = "@{/Images/NoPhotoLarge.jpg}" alt = " No item"/>
+    </aside>
+    <h2 th:text="${current.name}">Item Name</h2>
+    <p>Manufacturer: <span th:text = "${current.manufacturer}">Manufacturer</span></p>
+    <p>Price: <span th:text = "${current.price}">Price</span></p>
+    <p>Inventory: <span th:text = "${current.inventory}">Inventory</span></p>
+    <p>Type: <span th:text = "${current.type}">Type</span></p>
+</main>
+
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+
+
+</html>
