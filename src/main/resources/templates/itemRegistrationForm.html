@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace ="~{fragments :: head}"></head>
+
+<body id = "pageCenter">
+
+<div th:replace = "~{fragments :: header}"></div>
+
+<main>
+    <h2>Register an Item</h2>
+    <form method="POST" th:object="${item}" enctype="multipart/form-data">
+        Name: <input type="text" th:field="*{name}" /><br>
+        Manufacturer: <input type="text" th:field="*{manufacturer}" /><br>
+        Price: <input type="text" th:field="*{price}" /><br>
+        Inventory: <input type="text" th:field="*{inventory}" /><br>
+        Type: <select th:field="*{type}">
+        <option th:each="type : ${ItemTypes}"
+                th:value="${type}"
+                th:text="${type}"> TYPE </option></select>
+        Image: <input type="file" th:field="*{image}" /><br>
+        <button>Register Item</button>
+    </form>
+
+</main>
+
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+
+
+</html>
