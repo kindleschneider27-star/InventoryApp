@@ -9,16 +9,16 @@ public class Item {
     private String manufacturer;
     private double price;
     private int inventory;
-    private ItemType itemType;
+    private ItemType type;
     private Image image;
 
-    public Item(UUID id, String name, String manufacturer, double price, int inventory, ItemType itemType, Image image) {
+    public Item(UUID id, String name, String manufacturer, double price, int inventory, ItemType type, Image image) {
         this.id = id;
         this.name = name;
         this.manufacturer = manufacturer;
         this.price = price;
         this.inventory = inventory;
-        this.itemType = itemType;
+        this.type = type;
         this.image = image;
     }
 
@@ -65,12 +65,12 @@ public class Item {
         this.inventory = inventory;
     }
 
-    public ItemType getItemType() {
-        return itemType;
+    public ItemType getType() {
+        return type;
     }
 
-    public void setItemType(ItemType itemType) {
-        this.itemType = itemType;
+    public void setType(ItemType itemType) {
+        this.type = itemType;
     }
 
     public Image getImage() {

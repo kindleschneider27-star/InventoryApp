@@ -16,9 +16,9 @@
         Price: <input type="text" th:field="*{price}" /><br>
         Inventory: <input type="text" th:field="*{inventory}" /><br>
         Type: <select th:field="*{type}">
-        <option th:each="type : ${ItemTypes}"
+        <option th:each="type : ${ItemType}"
                 th:value="${type}"
-                th:text="${type}"> TYPE </option></select>
+                th:text="${type}"> TYPE </option></select> <br>
         Image: <input type="file" th:field="*{image}" /><br>
         <button>Register Item</button>
     </form>

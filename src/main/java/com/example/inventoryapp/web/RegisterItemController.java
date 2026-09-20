@@ -1,7 +1,7 @@
 package com.example.inventoryapp.web;
 
 
-import ch.qos.logback.core.model.Model;
+import org.springframework.ui.Model;
 import com.example.inventoryapp.domain.Item;
 import com.example.inventoryapp.domain.ItemType;
 import org.springframework.stereotype.Controller;
