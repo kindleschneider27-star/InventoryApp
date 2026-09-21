@@ -3,7 +3,7 @@ package com.example.inventoryapp.domain;
 import java.util.UUID;
 
 public class Item {
-    private UUID id;
+    private UUID id = UUID.randomUUID();
     private String name;
     private String manufacturer;
     private double price;
