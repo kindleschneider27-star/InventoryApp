@@ -24,7 +24,7 @@ public class ItemListController {
     @GetMapping
     public String listItems(Model model)
     {
-        model.addAttribute("items", itemDB.getItems());
+        model.addAttribute("itemsDB", itemDB.getItems());
         return "listItems";
     }
 }
