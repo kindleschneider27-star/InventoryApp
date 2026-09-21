@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace ="~{fragments :: head}"></head>
+
+<body id = "pageCenter">
+
+<div th:replace = "~{fragments :: header}"></div>
+
+<main>
+    <h2>List of Items</h2>
+    <div th:if="${itemDB == null|| itemDB.size() == 0}">
+        <p>No items found</p>
+    </div>
+
+    <div th:unless="${itemDB == null|| itemDB.size() == 0}"></div>
+    <section th:each="entry : ${itemDB}" th:with="current=${itemDB[entry.key]}">
+        <img class = "listItemImage" th:if="${current.hasImage()}" width="125" height="125"
+             th:src = "${current.image.getDataUri()}" alt="Image of item" />
+        <img class = "listItemImage" th:if="${current.hasImage()}" width="125" height="125"
+             th:src = "@{/Images/noimage.png}" alt="no image" /><br>
+
+        <h3><a th:href="@{'/view/current/' +${current.id}}" th:text="${current.name}">Name of Animal</a> </h3>
+        <p>Manufacturer: <span th:text = "${current.manufacturer}">Manufacturer</span></p>
+        <p>Price: <span th:text = "${current.price}">Price</span></p>
+        <p>Inventory: <span th:text = "${current.inventory}">Inventory</span></p>
+        <p>Type: <span th:text = "${current.type}">Type</span></p>
+
+    </section>
+
+</main>
+
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+
+
+</html>

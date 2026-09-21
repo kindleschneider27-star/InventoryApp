@@ -18,6 +18,11 @@ public class RegisterItemController {
     @Autowired
     private ItemDB itemDB;
 
+    @ModelAttribute("pageTitle")
+    public String addPageTitle(){
+        return "Register Item";
+    }
+
     @ModelAttribute
     public void addItemTypesToModel (Model model) {
         model.addAttribute("ItemType", ItemType.values());

@@ -25,6 +25,7 @@ public class ItemViewController {
 
         Item current = itemDB.getItems().get(id);
         model.addAttribute("current", current);
+        model.addAttribute("pageTitle", current.getName());
         return "viewItem";
     }
 }
