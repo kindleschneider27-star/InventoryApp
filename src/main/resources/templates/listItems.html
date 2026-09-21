@@ -18,7 +18,7 @@
     <section th:each="entry : ${itemDB}" th:with="current=${itemDB[entry.key]}">
         <img class = "listItemImage" th:if="${current.hasImage()}" width="125" height="125"
              th:src = "${current.image.getDataUri()}" alt="Image of item" />
-        <img class = "listItemImage" th:if="${current.hasImage()}" width="125" height="125"
+        <img class = "listItemImage" th:unless="${current.hasImage()}" width="125" height="125"
              th:src = "@{/Images/noimage.png}" alt="no image" /><br>
 
         <h3><a th:href="@{'/view/current/' +${current.id}}" th:text="${current.name}">Name of Animal</a> </h3>
