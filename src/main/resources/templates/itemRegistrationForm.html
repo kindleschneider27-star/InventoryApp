@@ -11,9 +11,18 @@
 <main>
     <h2>Register an Item</h2>
     <form method="POST" th:object="${item}" enctype="multipart/form-data">
-        Name: <input type="text" th:field="*{name}" /><br>
-        Manufacturer: <input type="text" th:field="*{manufacturer}" /><br>
-        Price: <input type="text" th:field="*{price}" /><br>
+        Name: <input type="text" th:field="*{name}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}">Name Error</span><br>
+        Manufacturer: <input type="text" th:field="*{manufacturer}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('manufacturer')}"
+              th:errors="*{manufacturer}">Manufacturer Error</span><br>
+        Price: <input type="text" th:field="*{price}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('price')}"
+              th:errors="*{price}">Price Error</span><br>
         Inventory: <input type="text" th:field="*{inventory}" /><br>
         Type: <select th:field="*{type}">
         <option th:each="type : ${ItemType}"

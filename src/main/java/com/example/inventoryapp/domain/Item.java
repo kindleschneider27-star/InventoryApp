@@ -1,13 +1,18 @@
 package com.example.inventoryapp.domain;
 
+import jakarta.validation.constraints.NotBlank;
+
 import java.util.UUID;
 
 public class Item {
     private UUID id = UUID.randomUUID();
+    @NotBlank(message= "A name is required")
     private String name;
+    @NotBlank(message= "A manufacturer is required")
     private String manufacturer;
+    @NotBlank(message= "A price is required")
     private double price;
-    private int inventory;
+    private int inventory; //default zero
     private ItemType type;
     private Image image;
 
