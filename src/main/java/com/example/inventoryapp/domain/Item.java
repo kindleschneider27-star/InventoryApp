@@ -1,6 +1,7 @@
 package com.example.inventoryapp.domain;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 import java.util.UUID;
 
@@ -10,9 +11,9 @@ public class Item {
     private String name;
     @NotBlank(message= "A manufacturer is required")
     private String manufacturer;
-    @NotBlank(message= "A price is required")
+    @Positive(message= "A price is required")
     private double price;
-    private int inventory; //default zero
+    private int inventory;
     private ItemType type;
     private Image image;
 
