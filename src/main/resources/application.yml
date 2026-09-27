@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: InventoryApp
+  thymeleaf:
+    cache: false
+  datasource:
+    url: "jdbc:h2:file:./data/inventory-app;DB_CLOSE_ON_EXIT=FALSE"
+    username: admin
+    password: items
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+
+
+logging:
+  file:
+    name: log/inventory-app.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: "logs/inventory-app-%d{yyyy-MM-dd}.%i.log"
+      max-file-size: 10MB
+      max-history: 30
+
+

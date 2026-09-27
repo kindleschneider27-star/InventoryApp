@@ -52,9 +52,9 @@ public class RegisterItemController {
         }
 
         if(item.hasImage()){
-            String imageName = item.getImage().getName();
+            String imageName = item.getImage().getImageName();
             imageName = item.getName() + imageName.substring(imageName.lastIndexOf('.'));
-            item.getImage().setName(imageName);
+            item.getImage().setImageName(imageName);
         }
         itemDB.addItem(item);
 

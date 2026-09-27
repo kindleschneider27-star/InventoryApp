@@ -1,12 +1,17 @@
 package com.example.inventoryapp.domain;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
 import java.util.UUID;
 
+@Entity
 public class Item {
-    private UUID id = UUID.randomUUID();
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     @NotBlank(message= "A name is required")
     private String name;
     @NotBlank(message= "A manufacturer is required")
@@ -14,7 +19,10 @@ public class Item {
     @Positive(message= "A price is required")
     private double price;
     private int inventory;
+
+    @Enumerated(EnumType.STRING)
     private ItemType type;
+    @Embedded
     private Image image;
 
     public Item(UUID id, String name, String manufacturer, double price, int inventory, ItemType type, Image image) {

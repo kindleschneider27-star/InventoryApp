@@ -11,10 +11,10 @@
 <main>
     <h2>Register an Item</h2>
     <form method="POST" th:object="${item}" enctype="multipart/form-data">
-        Name: <input type="text" th:field="*{name}" />
+        Name: <input type="text" th:field="*{imageName}" />
         <span class="validationError"
-              th:if="${#fields.hasErrors('name')}"
-              th:errors="*{name}">Name Error</span><br>
+              th:if="${#fields.hasErrors('imageName')}"
+              th:errors="*{imageName}">Name Error</span><br>
         Manufacturer: <input type="text" th:field="*{manufacturer}" />
         <span class="validationError"
               th:if="${#fields.hasErrors('manufacturer')}"
