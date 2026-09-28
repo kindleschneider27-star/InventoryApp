@@ -15,6 +15,7 @@
             Name: <input type="text" name="searchName" th:value="${searchName}">
             Manufacturer: <input type="text" name="searchManufacturer" th:value="${searchManufacturer}">
             Type: <select name="filterType">
+            <option value=""></option>
             <option th:each="t : ${ItemType}"
                     th:value="${t}"
                     th:text="${t}"
