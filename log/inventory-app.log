@@ -1,0 +1,133 @@
+2026-09-27T18:30:00.932-07:00  INFO 28688 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Starting InventoryAppApplication using Java 25.0.2 with PID 28688 (C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp\target\classes started by kmile in C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp)
+2026-09-27T18:30:00.934-07:00  INFO 28688 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-09-27T18:30:00.961-07:00  INFO 28688 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-27T18:30:00.961-07:00  INFO 28688 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-27T18:30:01.388-07:00  INFO 28688 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27T18:30:01.423-07:00  INFO 28688 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2026-09-27T18:30:01.711-07:00  INFO 28688 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-09-27T18:30:01.719-07:00  INFO 28688 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-27T18:30:01.720-07:00  INFO 28688 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27T18:30:01.744-07:00  INFO 28688 --- [InventoryApp] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 783 ms
+2026-09-27T18:30:01.835-07:00  INFO 28688 --- [InventoryApp] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-27T18:30:01.872-07:00  INFO 28688 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-27T18:30:02.151-07:00  INFO 28688 --- [InventoryApp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27T18:30:02.172-07:00  INFO 28688 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-27T18:30:02.295-07:00  INFO 28688 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/inventory-app user=ADMIN
+2026-09-27T18:30:02.296-07:00  INFO 28688 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-27T18:30:02.332-07:00  INFO 28688 --- [InventoryApp] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:file:./data/inventory-app]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: INVENTORY-APP/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27T18:30:02.869-07:00  INFO 28688 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27T18:30:02.905-07:00  INFO 28688 --- [InventoryApp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27T18:30:02.948-07:00  INFO 28688 --- [InventoryApp] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-27T18:30:03.037-07:00  WARN 28688 --- [InventoryApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27T18:30:03.208-07:00  INFO 28688 --- [InventoryApp] [restartedMain] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/inventory-app'
+2026-09-27T18:30:03.242-07:00  INFO 28688 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-09-27T18:30:03.245-07:00  INFO 28688 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Started InventoryAppApplication in 2.602 seconds (process running for 3.069)
+2026-09-27T18:30:13.228-07:00  INFO 28688 --- [InventoryApp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-27T18:30:13.229-07:00  INFO 28688 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-27T18:30:13.229-07:00  INFO 28688 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-09-27T18:31:02.092-07:00  WARN 28688 --- [InventoryApp] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2026-09-27T18:31:02.095-07:00  WARN 28688 --- [InventoryApp] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2026-09-27T18:31:39.973-07:00  INFO 28688 --- [InventoryApp] [http-nio-8080-exec-1] c.e.inventoryapp.services.ItemService    : Item registered : Item{id=c5845281-816f-43f4-aa79-70e74837eae9, name='calender', manufacturer='MCC', price=10.0, inventory=50, type=School Materials, image=com.example.inventoryapp.domain.Image@7ceff6f0}
+2026-09-27T18:34:50.739-07:00  INFO 28688 --- [InventoryApp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-27T18:34:50.745-07:00  INFO 28688 --- [InventoryApp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-27T18:34:50.747-07:00  INFO 28688 --- [InventoryApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27T18:34:50.749-07:00  INFO 28688 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-27T18:34:50.755-07:00  INFO 28688 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-27T18:34:52.792-07:00  INFO 41680 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Starting InventoryAppApplication using Java 25.0.2 with PID 41680 (C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp\target\classes started by kmile in C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp)
+2026-09-27T18:34:52.794-07:00  INFO 41680 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-09-27T18:34:52.820-07:00  INFO 41680 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-27T18:34:52.820-07:00  INFO 41680 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-27T18:34:53.177-07:00  INFO 41680 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27T18:34:53.206-07:00  INFO 41680 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interface.
+2026-09-27T18:34:53.500-07:00  INFO 41680 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-09-27T18:34:53.508-07:00  INFO 41680 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-27T18:34:53.509-07:00  INFO 41680 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27T18:34:53.534-07:00  INFO 41680 --- [InventoryApp] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 713 ms
+2026-09-27T18:34:53.623-07:00  INFO 41680 --- [InventoryApp] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-27T18:34:53.660-07:00  INFO 41680 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-27T18:34:53.941-07:00  INFO 41680 --- [InventoryApp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27T18:34:53.961-07:00  INFO 41680 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-27T18:34:54.088-07:00  INFO 41680 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/inventory-app user=ADMIN
+2026-09-27T18:34:54.089-07:00  INFO 41680 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-27T18:34:54.124-07:00  INFO 41680 --- [InventoryApp] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:file:./data/inventory-app]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: INVENTORY-APP/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27T18:34:54.652-07:00  INFO 41680 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27T18:34:54.687-07:00  INFO 41680 --- [InventoryApp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27T18:34:54.733-07:00  INFO 41680 --- [InventoryApp] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-27T18:34:54.823-07:00  WARN 41680 --- [InventoryApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27T18:34:55.001-07:00  INFO 41680 --- [InventoryApp] [restartedMain] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/inventory-app'
+2026-09-27T18:34:55.037-07:00  INFO 41680 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-09-27T18:34:55.040-07:00  INFO 41680 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Started InventoryAppApplication in 2.525 seconds (process running for 2.924)
+2026-09-27T18:35:02.482-07:00  INFO 41680 --- [InventoryApp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-27T18:35:02.482-07:00  INFO 41680 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-27T18:35:02.483-07:00  INFO 41680 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-09-27T18:44:07.204-07:00  INFO 41680 --- [InventoryApp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-27T18:44:07.207-07:00  INFO 41680 --- [InventoryApp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-27T18:44:07.209-07:00  INFO 41680 --- [InventoryApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27T18:44:07.211-07:00  INFO 41680 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-27T18:44:07.212-07:00  INFO 41680 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-27T18:44:09.290-07:00  INFO 38148 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Starting InventoryAppApplication using Java 25.0.2 with PID 38148 (C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp\target\classes started by kmile in C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp)
+2026-09-27T18:44:09.291-07:00  INFO 38148 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-09-27T18:44:09.317-07:00  INFO 38148 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-27T18:44:09.317-07:00  INFO 38148 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-27T18:44:09.675-07:00  INFO 38148 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27T18:44:09.708-07:00  INFO 38148 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 1 JPA repository interface.
+2026-09-27T18:44:09.992-07:00  INFO 38148 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-09-27T18:44:10.000-07:00  INFO 38148 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-27T18:44:10.000-07:00  INFO 38148 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27T18:44:10.024-07:00  INFO 38148 --- [InventoryApp] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 707 ms
+2026-09-27T18:44:10.114-07:00  INFO 38148 --- [InventoryApp] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-27T18:44:10.152-07:00  INFO 38148 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-27T18:44:10.429-07:00  INFO 38148 --- [InventoryApp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27T18:44:10.448-07:00  INFO 38148 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-27T18:44:10.574-07:00  INFO 38148 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/inventory-app user=ADMIN
+2026-09-27T18:44:10.575-07:00  INFO 38148 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-27T18:44:10.610-07:00  INFO 38148 --- [InventoryApp] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:file:./data/inventory-app]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: INVENTORY-APP/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27T18:44:11.137-07:00  INFO 38148 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27T18:44:11.170-07:00  INFO 38148 --- [InventoryApp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27T18:44:11.213-07:00  INFO 38148 --- [InventoryApp] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-27T18:44:11.299-07:00  WARN 38148 --- [InventoryApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27T18:44:11.472-07:00  INFO 38148 --- [InventoryApp] [restartedMain] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/inventory-app'
+2026-09-27T18:44:11.502-07:00  INFO 38148 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-09-27T18:44:11.505-07:00  INFO 38148 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Started InventoryAppApplication in 2.495 seconds (process running for 2.911)
+2026-09-27T18:44:16.952-07:00  INFO 38148 --- [InventoryApp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-27T18:44:16.952-07:00  INFO 38148 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-27T18:44:16.953-07:00  INFO 38148 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-27T18:45:19.472-07:00  INFO 38148 --- [InventoryApp] [http-nio-8080-exec-8] c.e.inventoryapp.services.ItemService    : Item registered : Item{id=58992847-c932-43f4-872e-4e79cb59dbe6, name='pen', manufacturer='us', price=5.0, inventory=0, type=Accessories, image=com.example.inventoryapp.domain.Image@4ce1f7a}
+2026-09-27T18:45:37.496-07:00  INFO 38148 --- [InventoryApp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-27T18:45:37.500-07:00  INFO 38148 --- [InventoryApp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-27T18:45:37.502-07:00  INFO 38148 --- [InventoryApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27T18:45:37.504-07:00  INFO 38148 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-27T18:45:37.509-07:00  INFO 38148 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

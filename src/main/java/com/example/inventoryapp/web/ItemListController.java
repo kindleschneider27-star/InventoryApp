@@ -1,6 +1,9 @@
 package com.example.inventoryapp.web;
 
 import com.example.inventoryapp.domain.ItemDB;
+import com.example.inventoryapp.services.ItemService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/list")
 public class ItemListController {
+    private static final Logger logger = LoggerFactory.getLogger(ItemListController.class);
 
-    @Autowired
-    private ItemDB itemDB;
+    private final ItemService itemService;
+
+    public ItemListController(ItemService is) {
+        itemService = is;
+    }
+
+
+
 
     @ModelAttribute("pageTitle")
     public String addPageTitle()
@@ -24,7 +34,7 @@ public class ItemListController {
     @GetMapping
     public String listItems(Model model)
     {
-        model.addAttribute("itemDB", itemDB.getItems());
+        model.addAttribute("itemDB", itemService.getAllItems());
         return "listItems";
     }
 }

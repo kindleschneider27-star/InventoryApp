@@ -21,7 +21,7 @@
         <img class = "listItemImage" th:unless="${current.hasImage()}" width="125" height="125"
              th:src = "@{/Images/noimage.png}" alt="no image" /><br>
 
-        <h3><a th:href="@{'/view/current/' +${current.id}}" th:text="${current.imageName}">Name of Animal</a> </h3>
+        <h3><a th:href="@{'/view/current/' +${current.id}}" th:text="${current.name}">Name of Animal</a> </h3>
         <p>Manufacturer: <span th:text = "${current.manufacturer}">Manufacturer</span></p>
         <p>Price: <span th:text = "${current.price}">Price</span></p>
         <p>Inventory: <span th:text = "${current.inventory}">Inventory</span></p>

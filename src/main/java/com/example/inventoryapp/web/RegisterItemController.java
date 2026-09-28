@@ -2,6 +2,7 @@ package com.example.inventoryapp.web;
 
 
 import com.example.inventoryapp.domain.ItemDB;
+import com.example.inventoryapp.services.ItemService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +21,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/register")
 public class RegisterItemController {
     private static final Logger logger = LoggerFactory.getLogger(RegisterItemController.class);
-    @Autowired
-    private ItemDB itemDB;
+
+    private final ItemService itemService;
+
+    public RegisterItemController(ItemService is) {
+        itemService = is;
+    }
 
     @ModelAttribute("pageTitle")
     public String addPageTitle(){
@@ -51,15 +56,8 @@ public class RegisterItemController {
             return "itemRegistrationForm";
         }
 
-        if(item.hasImage()){
-            String imageName = item.getImage().getImageName();
-            imageName = item.getName() + imageName.substring(imageName.lastIndexOf('.'));
-            item.getImage().setImageName(imageName);
-        }
-        itemDB.addItem(item);
 
-        logger.info("Item registered : {}", item);
-
-        return "redirect:/view/current/" + item.getId();
+        Item addedItem = itemService.registerNewItem(item);
+        return "redirect:/view/current/" + addedItem.getId();
     }
 }

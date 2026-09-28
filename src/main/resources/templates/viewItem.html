@@ -13,7 +13,7 @@
         <img th:if = "${current.hasImage()}" th:src = "${current.image.getDataUri()}" alt = "Image of item"/>
         <img th:unless="${current.hasImage()}" th:src = "@{/Images/NoPhotoLarge.jpg}" alt = " No item"/>
     </aside>
-    <h2 th:text="${current.imageName}">Item Name</h2>
+    <h2 th:text="${current.name}">Item Name</h2>
     <p>Manufacturer: <span th:text = "${current.manufacturer}">Manufacturer</span></p>
     <p>Price: <span th:text = "${current.price}">Price</span></p>
     <p>Inventory: <span th:text = "${current.inventory}">Inventory</span></p>
