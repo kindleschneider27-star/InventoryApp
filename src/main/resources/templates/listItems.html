@@ -9,6 +9,21 @@
 <div th:replace = "~{fragments :: header}"></div>
 
 <main>
+    <div>
+        <h3>Search Items</h3>
+        <form method ="GET" th:action="@{/list}">
+            Name: <input type="text" name="searchName" th:value="${searchName}">
+            Manufacturer: <input type="text" name="searchManufacturer" th:value="${searchManufacturer}">
+            Type: <select name="filterType">
+            <option th:each="t : ${ItemType}"
+                    th:value="${t}"
+                    th:text="${t}"
+                    th:selected="${t == filterType}" > TYPE </option></select>
+            <input type = "submit" value = "Item Search">
+            <a th:href="@{/list}">Clear Search</a>
+
+        </form>
+    </div>
     <h2>List of Items</h2>
     <div th:if="${itemDB == null|| itemDB.size() == 0}">
         <p>No items found</p>

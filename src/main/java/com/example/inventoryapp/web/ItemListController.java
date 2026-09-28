@@ -1,6 +1,7 @@
 package com.example.inventoryapp.web;
 
 import com.example.inventoryapp.domain.ItemDB;
+import com.example.inventoryapp.domain.ItemType;
 import com.example.inventoryapp.services.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/list")
@@ -22,19 +24,29 @@ public class ItemListController {
         itemService = is;
     }
 
-
-
-
     @ModelAttribute("pageTitle")
     public String addPageTitle()
     {
         return "List Items";
     }
 
+    @ModelAttribute
+    public void addItemTypesToModel (Model model) {
+        model.addAttribute("ItemType", ItemType.values());
+    }
+
+
     @GetMapping
-    public String listItems(Model model)
+    public String listItems(@RequestParam(defaultValue = "") String searchName,
+                            @RequestParam(defaultValue = "")String  searchManufacturer,
+                            @RequestParam(required = false) ItemType filterType,
+                            Model model)
     {
         model.addAttribute("itemDB", itemService.getAllItems());
+
+        model.addAttribute("searchName", searchName);
+        model.addAttribute("searchManufacturer", searchManufacturer);
+        model.addAttribute("filterType", filterType);
         return "listItems";
     }
 }
