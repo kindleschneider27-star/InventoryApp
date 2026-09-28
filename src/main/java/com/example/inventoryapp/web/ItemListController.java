@@ -42,7 +42,7 @@ public class ItemListController {
                             @RequestParam(required = false) ItemType filterType,
                             Model model)
     {
-        model.addAttribute("itemDB", itemService.getAllItems());
+        model.addAttribute("itemDB", itemService.searchItems(searchName, searchManufacturer, filterType));
 
         model.addAttribute("searchName", searchName);
         model.addAttribute("searchManufacturer", searchManufacturer);
