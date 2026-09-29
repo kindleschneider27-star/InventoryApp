@@ -75,16 +75,7 @@ public class ItemViewController {
         }
 
         itemService.updateItem(id, item);
-
-        boolean saved = itemService.updateItem(id, item);
-
-        if(saved){
-            logger.debug("Item id {} saved", id);
-        }
-        else{
-            logger.debug("Item id {} does not exist", id);
-        }
-        return "redirect:/view/current/{id}";
+        return "redirect:/view/current/" + id;
     }
 
     @PostMapping("current/{id}/delete")
