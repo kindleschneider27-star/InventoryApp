@@ -58,10 +58,4 @@ public class RegisterItemController {
         return "redirect:/view/current/" + addedItem.getId();
     }
 
-    @PostMapping("curent/{id}/delete")
-    public String deleteItem (@PathVariable UUID id) {
-
-        itemService.deleteItemById(id);
-        return "redirect/list";
-    }
 }

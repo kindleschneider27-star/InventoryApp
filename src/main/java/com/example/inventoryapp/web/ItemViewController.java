@@ -87,4 +87,11 @@ public class ItemViewController {
         return "redirect:/view/current/{id}";
     }
 
+    @PostMapping("current/{id}/delete")
+    public String deleteItem (@PathVariable UUID id) {
+
+        itemService.deleteItemById(id);
+        return "redirect:/list";
+    }
+
 }

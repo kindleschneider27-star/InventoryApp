@@ -19,10 +19,10 @@
     <p>Inventory: <span th:text = "${current.inventory}">Inventory</span></p>
     <p>Type: <span th:text = "${current.type}">Type</span></p>
 
-    <form method="GET" th:action="${'/view/current/' + ${current.id} + '/edit'}">
+    <form method="GET" th:action="@{'/view/current/' + ${current.id} + '/edit'}">
         <input type ="submit" value = "Edit">
     </form>
-    <form method="POST" th:action="${'/view/current/' + ${current.id} + '/delete'}">
+    <form method="POST" th:action="@{'/view/current/' + ${current.id} + '/delete'}">
         <input type ="submit" value = "Delete">
     </form>
 </main>
