@@ -1,11 +1,10 @@
 package com.example.inventoryapp.web;
 
-import com.example.inventoryapp.domain.ItemDB;
+
 import com.example.inventoryapp.domain.ItemType;
 import com.example.inventoryapp.services.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

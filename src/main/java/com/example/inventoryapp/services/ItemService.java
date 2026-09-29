@@ -91,8 +91,10 @@ public class ItemService {
         return db;
     }
 
+    @Transactional
     public boolean updateItem(UUID id, Item item) {
         if(!itemRepo.existsById(id)){
+            logger.info("Item not found : {}", id);
             return false;
         }
         Item lookup = itemRepo.findById(id).get();
@@ -103,6 +105,19 @@ public class ItemService {
 
         item.setId(id);
         itemRepo.save(item);
+        logger.info("Item updated : {}", item);
+        return true;
+    }
+
+    @Transactional
+    public boolean deleteItemById(UUID id) {
+        if(!itemRepo.existsById(id)){
+            logger.info("Item not found : {}", id);
+            return false;
+        }
+
+        itemRepo.deleteById(id);
+        logger.info("Item deleted : {}", id);
         return true;
     }
 }

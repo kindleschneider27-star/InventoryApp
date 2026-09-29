@@ -22,6 +22,9 @@
     <form method="GET" th:action="${'/view/current/' + ${current.id} + '/edit'}">
         <input type ="submit" value = "Edit">
     </form>
+    <form method="POST" th:action="${'/view/current/' + ${current.id} + '/delete'}">
+        <input type ="submit" value = "Delete">
+    </form>
 </main>
 
 <footer th:replace="~{fragments :: footer}"></footer>

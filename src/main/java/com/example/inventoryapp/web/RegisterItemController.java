@@ -1,21 +1,19 @@
 package com.example.inventoryapp.web;
 
 
-import com.example.inventoryapp.domain.ItemDB;
+
 import com.example.inventoryapp.services.ItemService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import com.example.inventoryapp.domain.Item;
 import com.example.inventoryapp.domain.ItemType;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/register")
@@ -56,8 +54,14 @@ public class RegisterItemController {
             return "itemRegistrationForm";
         }
 
-
         Item addedItem = itemService.registerNewItem(item);
         return "redirect:/view/current/" + addedItem.getId();
+    }
+
+    @PostMapping("curent/{id}/delete")
+    public String deleteItem (@PathVariable UUID id) {
+
+        itemService.deleteItemById(id);
+        return "redirect/list";
     }
 }

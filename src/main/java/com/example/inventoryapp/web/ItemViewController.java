@@ -3,7 +3,6 @@ package com.example.inventoryapp.web;
 
 
 import com.example.inventoryapp.domain.Item;
-import com.example.inventoryapp.domain.ItemDB;
 import com.example.inventoryapp.domain.ItemType;
 import com.example.inventoryapp.services.ItemService;
 import jakarta.validation.Valid;
