@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace ="~{fragments :: head}"></head>
+
+<body id = "pageCenter">
+
+<div th:replace = "~{fragments :: header}"></div>
+
+<main>
+    <aside class ="imageRight">
+        <img th:if = "${item.hasImage()}" th:src = "${item.image.getDataUri()}" alt = "Image of item"/>
+        <img th:unless="${item.hasImage()}" th:src = "@{/Images/NoPhotoLarge.jpg}" alt = " No item"/>
+    </aside>
+
+    <h2>Modify an Item</h2>
+    <form method="POST" th:object="${item}" enctype="multipart/form-data">
+        Name: <input type="text" th:field="*{name}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}">Name Error</span><br>
+        Manufacturer: <input type="text" th:field="*{manufacturer}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('manufacturer')}"
+              th:errors="*{manufacturer}">Manufacturer Error</span><br>
+        Price: <input type="text" th:field="*{price}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('price')}"
+              th:errors="*{price}">Price Error</span><br>
+        Inventory: <input type="text" th:field="*{inventory}" /><br>
+        Type: <select th:field="*{type}">
+        <option th:each="type : ${ItemType}"
+                th:value="${type}"
+                th:text="${type}"> TYPE </option></select> <br>
+        Image: <input type="file" th:field="*{image}" /><br>
+        <button>Register Item</button>
+    </form>
+
+</main>
+
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+
+
+</html>

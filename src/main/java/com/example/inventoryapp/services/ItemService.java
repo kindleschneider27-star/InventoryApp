@@ -90,4 +90,19 @@ public class ItemService {
 
         return db;
     }
+
+    public boolean updateItem(UUID id, Item item) {
+        if(!itemRepo.existsById(id)){
+            return false;
+        }
+        Item lookup = itemRepo.findById(id).get();
+
+        if(lookup.hasImage() && !item.hasImage()){
+            item.setImage(lookup.getImage());
+        }
+
+        item.setId(id);
+        itemRepo.save(item);
+        return true;
+    }
 }

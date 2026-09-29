@@ -18,6 +18,10 @@
     <p>Price: <span th:text = "${current.price}">Price</span></p>
     <p>Inventory: <span th:text = "${current.inventory}">Inventory</span></p>
     <p>Type: <span th:text = "${current.type}">Type</span></p>
+
+    <form method="GET" th:action="${'/view/current/' + ${current.id} + '/edit'}">
+        <input type ="submit" value = "Edit">
+    </form>
 </main>
 
 <footer th:replace="~{fragments :: footer}"></footer>
