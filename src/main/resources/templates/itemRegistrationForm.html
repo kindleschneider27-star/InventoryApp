@@ -18,7 +18,8 @@
         ID: <input type="text" th:field="*{id}" />
         <span class="validationError"
               th:if="${#fields.hasErrors('id')}"
-              th:errors="*{id}">Id Error</span><br>
+              th:errors="*{id}">Id Error</span>
+        <small>UUID Must be entered in 8-4-4-4-12 ex: 550e8400-e29b-41d4-a716-446655440000. </small><br>
         Manufacturer: <input type="text" th:field="*{manufacturer}" />
         <span class="validationError"
               th:if="${#fields.hasErrors('manufacturer')}"
