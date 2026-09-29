@@ -15,6 +15,7 @@
     </aside>
 
     <h2>Modify an Item</h2>
+    <p>ID: <span th:text= "${item.id}"></span></p>
     <form method="POST" th:object="${item}" enctype="multipart/form-data">
         Name: <input type="text" th:field="*{name}" />
         <span class="validationError"
