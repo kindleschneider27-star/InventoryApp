@@ -59,7 +59,7 @@ public class RegisterItemController {
             return "redirect:/view/current/" + addedItem.getId();
         }
         catch (Exception e){
-            errors.reject("item with this id already exists");
+            logger.debug("item with this id {} already exists", item.getId());
             return "itemRegistrationForm";
         }
 

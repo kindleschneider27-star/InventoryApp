@@ -11,7 +11,6 @@ import java.util.UUID;
 public class Item {
 
     @Id
-    @NotEmpty(message= "An id is required")
     private UUID id;
     @NotBlank(message= "A name is required")
     private String name;
