@@ -58,7 +58,7 @@ public class RegisterItemController {
             Item addedItem = itemService.registerNewItem(item);
             return "redirect:/view/current/" + addedItem.getId();
         }
-        catch (Exception e){
+        catch (IllegalArgumentException e){
             errors.rejectValue("id", "duplicate", "Item with this Id already exists"); //got this from AI since i cant use notblank with UUID
             return "itemRegistrationForm";
         }

@@ -22,7 +22,7 @@ public class ItemService {
     @Transactional
     public Item registerNewItem(Item item) {
         if(itemRepo.existsById(item.getId())){
-            throw new RuntimeException("Item already exists");
+            throw new IllegalArgumentException("Item already exists");
         }
         if(item.hasImage()){
             String imageName = item.getImage().getImageName();
