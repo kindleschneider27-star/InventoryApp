@@ -2,6 +2,7 @@ package com.example.inventoryapp.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 
 import java.util.UUID;
@@ -10,7 +11,7 @@ import java.util.UUID;
 public class Item {
 
     @Id
-    @NotBlank(message= "An id is required")
+    @NotEmpty(message= "An id is required")
     private UUID id;
     @NotBlank(message= "A name is required")
     private String name;

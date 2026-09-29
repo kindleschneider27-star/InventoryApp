@@ -54,8 +54,16 @@ public class RegisterItemController {
             return "itemRegistrationForm";
         }
 
-        Item addedItem = itemService.registerNewItem(item);
-        return "redirect:/view/current/" + addedItem.getId();
+        try{
+            Item addedItem = itemService.registerNewItem(item);
+            return "redirect:/view/current/" + addedItem.getId();
+        }
+        catch (Exception e){
+            errors.reject("item with this id already exists");
+            return "itemRegistrationForm";
+        }
+
+
     }
 
 }
