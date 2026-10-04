@@ -19,6 +19,7 @@ h2{
 }
 body {
     background-color: gray;
+    font-family: Arial, Verdana, sans-serif;
 }
 main {
     background-color: white;
@@ -39,6 +40,29 @@ nav a {
     margin-left: 20px;
     font-weight: bold;
 }
+nav form{
+    display:inline;
+}
+
+nav form input[type="submit"] {
+    background: none;
+    border: none;
+    color: #0066b7;
+    font-size: 1.5em;
+    text-decoration:none;
+    margin-right: 5%;
+    margin-left: 5%;
+    font-weight: bold;
+    font-family: Arial, Verdana, sans-serif;
+    cursor: pointer;
+}
+nav form input[type="submit"]:hover{
+     color: black;
+ }
+nav form input[type="submit"]:visited {
+    color: white;
+}
+
 #pageCenter {
     width: 80%;
     margin-right: auto;
@@ -64,12 +88,13 @@ footer {
 nav a:link {
     color: white;
 }
+nav a:hover{
+     color: black;
+ }
 nav a:visited {
     color: white;
 }
-nav a:hover{
-    color: black;
-}
+
 section {
     padding: 10px;
     margin-top: 15px;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace ="~{fragments :: head}"></head>
+
+<body id = "pageCenter">
+
+<div th:replace = "~{fragments :: header}"></div>
+
+<main>
+    <h2>Register a New User</h2>
+    <form method="POST" th:object="${userRegistrationForm}" th:action="@{/register}">
+        Username: <input type="text" th:field="*{username}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('username')}"
+              th:errors="*{username}">Username Error</span><br>
+        Password: <input type="password" th:field="*{password}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('password')}"
+              th:errors="*{password}">Password Error</span><br>
+        Confirm Password: <input type="password" th:field="*{confirmPassword}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('confirmPassword')}"
+              th:errors="*{confirmPassword}">Confirm Password Error</span><br>
+        Full Name: <input type="text" th:field="*{fullName}" />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('fullName')}"
+              th:errors="*{fullName}">Full Name Error</span><br>
+        <input type="submit" value="Register">
+
+    </form>
+
+</main>
+
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+
+
+</html>
