@@ -98,4 +98,16 @@ public class ItemViewController {
         return "redirect:/list";
     }
 
+    @PostMapping("/current/{id}")
+    public String editInventory (@PathVariable UUID id, int newInventory, RedirectAttributes redirectAttributes) {
+
+        if(itemService.updateInventory(id, newInventory)){
+            redirectAttributes.addFlashAttribute("message", "Inventory updated successfully");
+        }
+        else {
+            redirectAttributes.addFlashAttribute("message", "Inventory update failed");
+        }
+        return "redirect:/view/current/" + id;
+    }
+
 }

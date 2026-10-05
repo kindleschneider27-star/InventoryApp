@@ -126,4 +126,16 @@ public class ItemService {
         logger.info("Item deleted : {}", id);
         return true;
     }
+
+    @Transactional
+    @PreAuthorize("hasAnyRole('MNGR','ADMIN','ASSOC')")
+    public boolean updateInventory(UUID id, int newInventory) {
+        if(!itemRepo.existsById(id)){
+            logger.info("Item not found : {}", id);
+            return false;
+        }
+        return itemRepo.updateInventoryById(id, newInventory) > 0;
+
+    }
+
 }

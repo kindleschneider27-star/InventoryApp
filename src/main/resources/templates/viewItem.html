@@ -21,17 +21,21 @@
     <p>Price: <span th:text = "${current.price}">Price</span></p>
     <p>Type: <span th:text = "${current.type}">Type</span></p>
     <p><span sec:authorize="isAnonymous()" th:text="To view inventroy Log In"></span></p>
-    <div sec:authorize="isAuthenticated()">
-        <p>Inventory: <span  th:text = "${current.inventory}">Inventory</span></p>
+    <p>Inventory: <span sec:authorize="isAuthenticated()" th:text = "${current.inventory}">Inventory</span></p>
+    <div sec:authorize="hasAnyRole('ADMIN', 'MNGR','ASSOC')">
+        <form>
+            Inventory: <input type="text" th:field="*{current.inventory}" />
+            <input type="submit" value="Update Inventory" />
+        </form>
         <div sec:authorize="hasAnyRole('ADMIN', 'MNGR')">
             <form  method="GET" th:action="@{'/view/current/' + ${current.id} + '/edit'}">
                 <input type ="submit" value = "Edit">
             </form>
             <form method="POST" th:action="@{'/view/current/' + ${current.id} + '/delete'}">
                 <input type ="submit" value = "Delete">
+            </form>
         </div>
 
-        </form>
     </div>
 
 </main>
