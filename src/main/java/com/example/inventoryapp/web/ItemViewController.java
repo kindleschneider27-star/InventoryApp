@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -48,6 +50,7 @@ public class ItemViewController {
     }
 
     @GetMapping("/current/{id}/edit")
+    @PreAuthorize("hasRole('MNGR') or ('ADMIN')")
     public String viewEditItem(@PathVariable UUID id, Model model) {
         Optional<Item> item = itemService.getItemById(id);
         if(item.isEmpty()){
@@ -65,7 +68,8 @@ public class ItemViewController {
     }
 
     @PostMapping ("/current/{id}/edit")
-    public String modifyItem (@PathVariable UUID id, @Valid Item item, Errors errors, Model model) {
+    @PreAuthorize("hasRole('MNGR') or ('ADMIN')")
+    public String modifyItem (@PathVariable UUID id, @Valid Item item, Errors errors, Model model, RedirectAttributes redirectAttributes) {
         logger.debug("Item id not found: {} to edit", id);
 
         if(errors.hasErrors()){
@@ -74,14 +78,25 @@ public class ItemViewController {
             return "itemModifyForm";
         }
 
-        itemService.updateItem(id, item);
+        if(itemService.updateItem(id, item)){
+            redirectAttributes.addFlashAttribute("message", "Item updated successfully");
+        }
+        else{
+            redirectAttributes.addFlashAttribute("message", "Item update failed");
+        }
         return "redirect:/view/current/" + id;
     }
 
     @PostMapping("current/{id}/delete")
-    public String deleteItem (@PathVariable UUID id) {
+    @PreAuthorize("hasRole('MNGR') or ('ADMIN')")
+    public String deleteItem (@PathVariable UUID id, RedirectAttributes redirectAttributes) {
 
-        itemService.deleteItemById(id);
+        if(itemService.deleteItemById(id)){
+            redirectAttributes.addFlashAttribute("message", "Item deleted successfully");
+        }
+        else {
+            redirectAttributes.addFlashAttribute("message", "Item delete failed");
+        }
         return "redirect:/list";
     }
 

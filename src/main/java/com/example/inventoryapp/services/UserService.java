@@ -39,7 +39,7 @@ public class UserService implements UserDetailsService {
         }
 
         else{
-            logger.info("User already exists", user.getUsername());
+            logger.info("User already exists {}", user.getUsername());
         }
     }
 
