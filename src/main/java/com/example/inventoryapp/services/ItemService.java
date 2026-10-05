@@ -6,6 +6,7 @@ import com.example.inventoryapp.domain.ItemType;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -95,6 +96,7 @@ public class ItemService {
     }
 
     @Transactional
+    @PreAuthorize("hasAnyRole('MNGR', 'ADMIN')")
     public boolean updateItem(UUID id, Item item) {
         if(!itemRepo.existsById(id)){
             logger.info("Item not found : {}", id);
@@ -113,6 +115,7 @@ public class ItemService {
     }
 
     @Transactional
+    @PreAuthorize("hasAnyRole('MNGR', 'ADMIN')")
     public boolean deleteItemById(UUID id) {
         if(!itemRepo.existsById(id)){
             logger.info("Item not found : {}", id);

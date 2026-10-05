@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:fragment="head">
     <meta charset="UTF-8">
@@ -15,12 +16,15 @@
     <nav>
         <a th:href="@{/}">Home</a>
         <a th:href="@{/list}">Item Search</a>
-        <a th:href="@{/register}">Add Item</a>
-        <a th:href="@{/login}">Log In</a>
-        <form method="post" th:action="@{/logout}">
+        <a sec:authorize="isAuthenticated()" th:href="@{/register}">Add Item</a>
+        <a sec:authorize="isAnonymous()" th:href="@{/login}">Log In</a>
+        <form sec:authorize="isAuthenticated()" method="post" th:action="@{/logout}">
             <input type="submit" value="Log Out">
         </form>
     </nav>
+    <div sec:authorize="isAuthenticated()">
+        Welcome <span sec:authentication="principal.fullName">FULL NAME<</span>
+    </div>
 </div>
 
 </body>

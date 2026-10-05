@@ -68,7 +68,6 @@ public class ItemViewController {
     }
 
     @PostMapping ("/current/{id}/edit")
-    @PreAuthorize("hasRole('MNGR') or ('ADMIN')")
     public String modifyItem (@PathVariable UUID id, @Valid Item item, Errors errors, Model model, RedirectAttributes redirectAttributes) {
         logger.debug("Item id not found: {} to edit", id);
 
@@ -88,7 +87,6 @@ public class ItemViewController {
     }
 
     @PostMapping("current/{id}/delete")
-    @PreAuthorize("hasRole('MNGR') or ('ADMIN')")
     public String deleteItem (@PathVariable UUID id, RedirectAttributes redirectAttributes) {
 
         if(itemService.deleteItemById(id)){
