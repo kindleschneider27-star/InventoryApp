@@ -50,7 +50,7 @@ public class ItemViewController {
     }
 
     @GetMapping("/current/{id}/edit")
-    @PreAuthorize("hasRole('MNGR') or ('ADMIN')")
+    @PreAuthorize("hasAnyRole('MNGR', 'ADMIN')")
     public String viewEditItem(@PathVariable UUID id, Model model) {
         Optional<Item> item = itemService.getItemById(id);
         if(item.isEmpty()){

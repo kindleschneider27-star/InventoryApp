@@ -10,7 +10,7 @@
 
 <main>
     <h2>Register an Item</h2>
-    <form method="POST" th:object="${item}" enctype="multipart/form-data">
+    <form method="POST" th:object="${item}" th:action="@{/register}" enctype="multipart/form-data">
         Name: <input type="text" th:field="*{name}" />
         <span class="validationError"
               th:if="${#fields.hasErrors('name')}"

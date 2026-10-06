@@ -608,3 +608,89 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2026-10-06T15:42:10.861-07:00  INFO 8560 --- [InventoryApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-10-06T15:42:10.864-07:00  INFO 8560 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-10-06T15:42:10.869-07:00  INFO 8560 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-06T16:37:52.430-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Starting InventoryAppApplication using Java 25.0.2 with PID 16352 (C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp\target\classes started by kmile in C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp)
+2026-10-06T16:37:52.432-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : The following 1 profile is active: "dev"
+2026-10-06T16:37:52.462-07:00  INFO 16352 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-06T16:37:52.462-07:00  INFO 16352 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-06T16:37:52.946-07:00  INFO 16352 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-06T16:37:52.977-07:00  INFO 16352 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 2 JPA repository interfaces.
+2026-10-06T16:37:53.344-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-06T16:37:53.352-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-06T16:37:53.352-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-06T16:37:53.378-07:00  INFO 16352 --- [InventoryApp] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 915 ms
+2026-10-06T16:37:53.493-07:00  INFO 16352 --- [InventoryApp] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-06T16:37:53.526-07:00  INFO 16352 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-06T16:37:53.803-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-06T16:37:53.823-07:00  INFO 16352 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-06T16:37:53.961-07:00  INFO 16352 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/inventory-app user=ADMIN
+2026-10-06T16:37:53.962-07:00  INFO 16352 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-06T16:37:53.998-07:00  INFO 16352 --- [InventoryApp] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:file:./data/inventory-app]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: INVENTORY-APP/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-06T16:37:54.561-07:00  INFO 16352 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-06T16:37:54.594-07:00  INFO 16352 --- [InventoryApp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-06T16:37:54.649-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-06T16:37:55.055-07:00  WARN 16352 --- [InventoryApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-06T16:37:55.123-07:00  INFO 16352 --- [InventoryApp] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-10-06T16:37:55.570-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/inventory-app'
+2026-10-06T16:37:55.616-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-06T16:37:55.620-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Started InventoryAppApplication in 3.481 seconds (process running for 4.158)
+2026-10-06T16:37:55.784-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists admin
+2026-10-06T16:37:55.847-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists user
+2026-10-06T16:37:55.910-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists associate
+2026-10-06T16:37:55.973-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists manager
+2026-10-06T16:37:58.282-07:00  INFO 16352 --- [InventoryApp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-06T16:37:58.282-07:00  INFO 16352 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-06T16:37:58.283-07:00  INFO 16352 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-06T16:43:07.505-07:00  INFO 16352 --- [InventoryApp] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-10-06T16:43:07.508-07:00  INFO 16352 --- [InventoryApp] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-06T16:43:07.510-07:00  INFO 16352 --- [InventoryApp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-06T16:43:07.513-07:00  INFO 16352 --- [InventoryApp] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-06T16:43:07.515-07:00  INFO 16352 --- [InventoryApp] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-06T16:43:07.521-07:00  INFO 16352 --- [InventoryApp] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-06T16:43:07.581-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Starting InventoryAppApplication using Java 25.0.2 with PID 16352 (C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp\target\classes started by kmile in C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp)
+2026-10-06T16:43:07.581-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : The following 1 profile is active: "dev"
+2026-10-06T16:43:07.709-07:00  INFO 16352 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-06T16:43:07.718-07:00  INFO 16352 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2026-10-06T16:43:07.790-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-06T16:43:07.791-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-06T16:43:07.791-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-06T16:43:07.805-07:00  INFO 16352 --- [InventoryApp] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 223 ms
+2026-10-06T16:43:07.848-07:00  INFO 16352 --- [InventoryApp] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-06T16:43:07.869-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-06T16:43:07.870-07:00  INFO 16352 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-06T16:43:07.884-07:00  INFO 16352 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:file:./data/inventory-app user=ADMIN
+2026-10-06T16:43:07.884-07:00  INFO 16352 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-06T16:43:07.884-07:00  INFO 16352 --- [InventoryApp] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:file:./data/inventory-app]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: INVENTORY-APP/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-06T16:43:07.929-07:00  INFO 16352 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-06T16:43:07.932-07:00  INFO 16352 --- [InventoryApp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-06T16:43:08.016-07:00  WARN 16352 --- [InventoryApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-06T16:43:08.049-07:00  INFO 16352 --- [InventoryApp] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-10-06T16:43:08.187-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/inventory-app'
+2026-10-06T16:43:08.202-07:00  INFO 16352 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-06T16:43:08.204-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Started InventoryAppApplication in 0.643 seconds (process running for 316.742)
+2026-10-06T16:43:08.279-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists admin
+2026-10-06T16:43:08.336-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists user
+2026-10-06T16:43:08.393-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists associate
+2026-10-06T16:43:08.452-07:00  INFO 16352 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists manager
+2026-10-06T16:43:08.453-07:00  INFO 16352 --- [InventoryApp] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
