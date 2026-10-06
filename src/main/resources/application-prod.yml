@@ -1,0 +1,15 @@
+spring:
+  thymeleaf:
+    cache: false #will be true
+  datasource:
+    url: "jdbc:mysql://localhost:${MYSQL_PORT_FORWARD}/${MYSQL_DATABASE}"
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update #will be validated
+    show-sql: false
+  item:
+    page-size: 20
+

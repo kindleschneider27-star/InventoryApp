@@ -11,7 +11,7 @@ public class Image {
     private String ImageName;
     private String encoding;
     @Lob
-    @Column(columnDefinition = "BLOB")
+    @Column(columnDefinition = "MEDIUMBLOB")
     private byte[] contents;
 
     public Image(String name, String encoding, byte[] contents) {

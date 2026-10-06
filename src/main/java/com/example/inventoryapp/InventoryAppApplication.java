@@ -5,7 +5,10 @@ import com.example.inventoryapp.services.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /*
@@ -21,6 +24,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  */
 
 @SpringBootApplication
+@ConfigurationPropertiesScan
 public class InventoryAppApplication {
 
     public static void main(String[] args) {
@@ -28,6 +32,7 @@ public class InventoryAppApplication {
     }
 
     @Bean
+    @Profile("dev")
     public CommandLineRunner dataLoader(UserService userService, PasswordEncoder passwordEncoder){
         return args ->  {
             userService.createUserIfMissing(new User("admin", passwordEncoder.encode("password"),

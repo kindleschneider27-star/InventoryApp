@@ -1,10 +1,14 @@
 package com.example.inventoryapp.web;
 
 
+import com.example.inventoryapp.config.ItemProperties;
 import com.example.inventoryapp.domain.ItemType;
 import com.example.inventoryapp.services.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,10 +22,14 @@ public class ItemListController {
     private static final Logger logger = LoggerFactory.getLogger(ItemListController.class);
 
     private final ItemService itemService;
+    private final ItemProperties itemProperties;
 
-    public ItemListController(ItemService is) {
+    public ItemListController(ItemService is, ItemProperties ip) {
         itemService = is;
+        itemProperties = ip;
     }
+
+
 
     @ModelAttribute("pageTitle")
     public String addPageTitle()
@@ -39,9 +47,12 @@ public class ItemListController {
     public String listItems(@RequestParam(defaultValue = "") String searchName,
                             @RequestParam(defaultValue = "")String  searchManufacturer,
                             @RequestParam(required = false) ItemType filterType,
+                            @RequestParam(defaultValue = "o") int page,
                             Model model)
     {
-        model.addAttribute("itemDB", itemService.searchItems(searchName, searchManufacturer, filterType));
+        Pageable pageable = PageRequest.of(page, itemProperties.getPageSize(),
+                Sort.by("name").ascending().and(Sort.by("id")));
+        model.addAttribute("itemDB", itemService.searchItems(searchName, searchManufacturer, filterType, pageable));
 
         model.addAttribute("searchName", searchName);
         model.addAttribute("searchManufacturer", searchManufacturer);

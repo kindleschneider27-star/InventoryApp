@@ -6,6 +6,8 @@ import com.example.inventoryapp.domain.ItemType;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
@@ -41,58 +43,53 @@ public class ItemService {
         return itemRepo.findById(id);
     }
 
-    public Map<UUID, Item> getAllItems() {
-        Map<UUID, Item> db = new HashMap<>();
-        itemRepo.findAll().forEach(item -> db.put(item.getId(), item));
-        return db;
+    public Page<Item> getAllItems(Pageable pageable) {
+        return itemRepo.findAll(pageable);
+
     }
 
-    public Map<UUID, Item> searchItems(String searchName, String searchManufacturer, ItemType filterType){
-        Map<UUID, Item> db = new HashMap<>();
+    public Page<Item> searchItems(String searchName, String searchManufacturer, ItemType filterType, Pageable pageable){
 
         boolean hasName = searchName != null && !searchName.isBlank();
         boolean hasManufacturer = searchManufacturer != null && !searchManufacturer.isBlank();
         boolean hasType = filterType != null;
 
         if(hasName && hasManufacturer && hasType){
-            itemRepo.findByNameContainingIgnoreCaseAndTypeAndManufacturerIgnoreCase(searchName, filterType, searchManufacturer)
-                    .forEach(item -> db.put(item.getId(), item));
+            return itemRepo.findByNameContainingIgnoreCaseAndTypeAndManufacturerIgnoreCase(searchName, filterType, searchManufacturer, pageable);
         }
 
         else if(hasName && hasManufacturer){
-            itemRepo.findByNameContainingIgnoreCaseAndManufacturerIgnoreCase(searchName, searchManufacturer)
-                    .forEach(item -> db.put(item.getId(), item));
+            return itemRepo.findByNameContainingIgnoreCaseAndManufacturerIgnoreCase(searchName, searchManufacturer, pageable);
         }
 
         else if(hasName && hasType){
-            itemRepo.findByNameContainingIgnoreCaseAndType(searchName, filterType)
-                    .forEach(item -> db.put(item.getId(), item));
+            return itemRepo.findByNameContainingIgnoreCaseAndType(searchName, filterType, pageable);
+
         }
 
         else if(hasType && hasManufacturer){
-            itemRepo.findByTypeAndManufacturerIgnoreCase(filterType, searchManufacturer)
-                    .forEach(item -> db.put(item.getId(), item));
+            return itemRepo.findByTypeAndManufacturerIgnoreCase(filterType, searchManufacturer, pageable);
+
         }
 
         else if(hasName){
-            itemRepo.findByNameContainingIgnoreCase(searchName)
-                    .forEach(item -> db.put(item.getId(), item));
+            return itemRepo.findByNameContainingIgnoreCase(searchName, pageable);
+
         }
 
         else if(hasManufacturer){
-            itemRepo.findByManufacturerIgnoreCase(searchManufacturer)
-                    .forEach(item -> db.put(item.getId(), item));
+            return itemRepo.findByManufacturerIgnoreCase(searchManufacturer, pageable);
+
         }
 
         else if(hasType){
-            itemRepo.findByType(filterType)
-                    .forEach(item -> db.put(item.getId(), item));
+            return itemRepo.findByType(filterType, pageable);
+
         }
         else{
-            return getAllItems();
+            return getAllItems(pageable);
         }
 
-        return db;
     }
 
     @Transactional
