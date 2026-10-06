@@ -47,7 +47,7 @@ public class ItemListController {
     public String listItems(@RequestParam(defaultValue = "") String searchName,
                             @RequestParam(defaultValue = "")String  searchManufacturer,
                             @RequestParam(required = false) ItemType filterType,
-                            @RequestParam(defaultValue = "o") int page,
+                            @RequestParam(defaultValue = "0") int page,
                             Model model)
     {
         Pageable pageable = PageRequest.of(page, itemProperties.getPageSize(),

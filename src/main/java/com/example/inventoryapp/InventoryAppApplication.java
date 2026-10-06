@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 /*
  * Author: Kindle Schneider
- * Date: September 29, 2026
+ * Date: Oct 6, 2026
  * Class: INFO 1541 WA
  * Project: InventoryApp - School Bookstore Inventory System
  *

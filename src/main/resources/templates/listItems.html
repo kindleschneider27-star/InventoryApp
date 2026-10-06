@@ -49,7 +49,7 @@
     <a th:if="${itemDB.hasPrevious()}" th:href="@{/list(page=${itemDB.number - 1},
                                                         searchName=${searchName},
                                                         filterType=${filterType},
-                                                        filterSubType=${filterSubType})}">
+                                                        searchManufacturer=${searchManufacturer})}">
         Prev
     </a>
 
@@ -60,7 +60,7 @@
            th:href="@{/list(page=${pageNumber},
                           searchName=${searchName},
                           filterType=${filterType},
-                          filterSubType=${filterSubType})}"
+                          searchManufacturer=${searchManufacturer})}">)}"
            th:text="${pageNumber + 1}">
             PAGENUMBER
         </a>
@@ -73,7 +73,7 @@
     <a th:if="${itemDB.hasNext()}" th:href="@{/list(page=${itemDB.number + 1},
                                                         searchName=${searchName},
                                                         filterType=${filterType},
-                                                        filterSubType=${filterSubType})}">
+                                                        searchManufacturer=${searchManufacturer})}">
         Next
     </a>
 
