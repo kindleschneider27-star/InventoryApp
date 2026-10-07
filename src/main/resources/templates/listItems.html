@@ -55,7 +55,7 @@
 
     <span th:unless="${itemDB.hasPrevious()}">Prev</span>
 
-    <span th:each="pageNumber: ${#number.sequence(0, itemDB.totalPages - 1)}">
+    <span th:each="pageNumber: ${#numbers.sequence(0, itemDB.totalPages - 1)}">
         <a th:if="${pageNumber != itemDB.number}"
            th:href="@{/list(page=${pageNumber},
                           searchName=${searchName},
