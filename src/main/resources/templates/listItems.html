@@ -60,14 +60,15 @@
            th:href="@{/list(page=${pageNumber},
                           searchName=${searchName},
                           filterType=${filterType},
-                          searchManufacturer=${searchManufacturer})}">)}"
+                          searchManufacturer=${searchManufacturer})}"
            th:text="${pageNumber + 1}">
             PAGENUMBER
         </a>
 
         <span th:unless="${pageNumber != itemDB.number}"
-            th:text="${pageNumber + 1}">
+              th:text="${pageNumber + 1}">
             PAGENUMBER
+        </span>
     </span>
 
     <a th:if="${itemDB.hasNext()}" th:href="@{/list(page=${itemDB.number + 1},

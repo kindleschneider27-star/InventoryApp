@@ -20,7 +20,7 @@ logging:
   level:
     com.mccneb.inventoryapp: DEBUG
 
-  item:
-    page-size: 2
+item:
+  page-size: 2
 
 

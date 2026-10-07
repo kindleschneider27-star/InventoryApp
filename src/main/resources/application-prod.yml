@@ -10,6 +10,6 @@ spring:
     hibernate:
       ddl-auto: update #will be validated
     show-sql: false
-  item:
-    page-size: 20
+item:
+  page-size: 20
 

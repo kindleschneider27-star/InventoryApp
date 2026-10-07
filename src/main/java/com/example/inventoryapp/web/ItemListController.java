@@ -29,8 +29,6 @@ public class ItemListController {
         itemProperties = ip;
     }
 
-
-
     @ModelAttribute("pageTitle")
     public String addPageTitle()
     {
