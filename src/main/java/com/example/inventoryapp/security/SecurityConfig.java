@@ -20,6 +20,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers("/data-api/**").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/","/error","/style.css","/Images/**").permitAll()
                         .requestMatchers("/list","/view/current/{id}", "/user/register").permitAll()
                         .requestMatchers("/register", "/register/**", "/view/current/{id}/edit","/view/current/{id}/delete").hasAnyRole("ADMIN", "MNGR")

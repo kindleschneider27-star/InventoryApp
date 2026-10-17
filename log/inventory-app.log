@@ -5891,3 +5891,264 @@ org.springframework.expression.spel.SpelEvaluationException: EL1011E: Method cal
 2026-10-06T19:41:24.740-07:00  INFO 11448 --- [InventoryApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-10-06T19:41:24.742-07:00  INFO 11448 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-10-06T19:41:24.748-07:00  INFO 11448 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-17T12:37:59.778-07:00  INFO 2672 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Starting InventoryAppApplication using Java 25.0.2 with PID 2672 (C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp\target\classes started by kmile in C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp)
+2026-10-17T12:37:59.781-07:00  INFO 2672 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : The following 1 profile is active: "dev"
+2026-10-17T12:37:59.819-07:00  INFO 2672 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-17T12:37:59.820-07:00  INFO 2672 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-17T12:38:00.513-07:00  INFO 2672 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-17T12:38:00.549-07:00  INFO 2672 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
+2026-10-17T12:38:00.972-07:00  INFO 2672 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-17T12:38:00.982-07:00  INFO 2672 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-17T12:38:00.982-07:00  INFO 2672 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-17T12:38:01.013-07:00  INFO 2672 --- [InventoryApp] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1193 ms
+2026-10-17T12:38:01.144-07:00  INFO 2672 --- [InventoryApp] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-17T12:38:01.198-07:00  INFO 2672 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-17T12:38:01.542-07:00  INFO 2672 --- [InventoryApp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-17T12:38:01.568-07:00  INFO 2672 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-17T12:38:01.736-07:00  INFO 2672 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/inventory-app user=ADMIN
+2026-10-17T12:38:01.737-07:00  INFO 2672 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-17T12:38:01.787-07:00  INFO 2672 --- [InventoryApp] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:file:./data/inventory-app]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: INVENTORY-APP/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-17T12:38:02.460-07:00  INFO 2672 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-17T12:38:02.500-07:00  INFO 2672 --- [InventoryApp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-17T12:38:02.565-07:00  INFO 2672 --- [InventoryApp] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-17T12:38:03.102-07:00  WARN 2672 --- [InventoryApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-17T12:38:03.172-07:00  INFO 2672 --- [InventoryApp] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-10-17T12:38:03.598-07:00  INFO 2672 --- [InventoryApp] [restartedMain] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/inventory-app'
+2026-10-17T12:38:03.644-07:00  INFO 2672 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-17T12:38:03.649-07:00  INFO 2672 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Started InventoryAppApplication in 4.221 seconds (process running for 4.784)
+2026-10-17T12:38:03.808-07:00  INFO 2672 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists admin
+2026-10-17T12:38:03.866-07:00  INFO 2672 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists user
+2026-10-17T12:38:03.923-07:00  INFO 2672 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists associate
+2026-10-17T12:38:03.981-07:00  INFO 2672 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists manager
+2026-10-17T12:38:03.981-07:00  WARN 2672 --- [InventoryApp] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-17T12:38:03.981-07:00  WARN 2672 --- [InventoryApp] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-17T12:46:16.966-07:00  INFO 2672 --- [InventoryApp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-17T12:46:16.969-07:00  INFO 2672 --- [InventoryApp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-17T12:46:16.973-07:00  INFO 2672 --- [InventoryApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-17T12:46:16.976-07:00  INFO 2672 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-17T12:46:16.981-07:00  INFO 2672 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-17T12:48:28.572-07:00  INFO 8972 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Starting InventoryAppApplication using Java 25.0.2 with PID 8972 (C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp\target\classes started by kmile in C:\Users\kmile\Documents\school mcc\homework\spring 2026\homework\InventoryApp)
+2026-10-17T12:48:28.574-07:00  INFO 8972 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : The following 1 profile is active: "dev"
+2026-10-17T12:48:28.603-07:00  INFO 8972 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-17T12:48:28.603-07:00  INFO 8972 --- [InventoryApp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-17T12:48:29.194-07:00  INFO 8972 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-17T12:48:29.223-07:00  INFO 8972 --- [InventoryApp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 2 JPA repository interfaces.
+2026-10-17T12:48:29.585-07:00  INFO 8972 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-17T12:48:29.593-07:00  INFO 8972 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-17T12:48:29.593-07:00  INFO 8972 --- [InventoryApp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-17T12:48:29.621-07:00  INFO 8972 --- [InventoryApp] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1018 ms
+2026-10-17T12:48:29.739-07:00  INFO 8972 --- [InventoryApp] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-17T12:48:29.773-07:00  INFO 8972 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-17T12:48:30.056-07:00  INFO 8972 --- [InventoryApp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-17T12:48:30.077-07:00  INFO 8972 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-17T12:48:30.207-07:00  INFO 8972 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/inventory-app user=ADMIN
+2026-10-17T12:48:30.208-07:00  INFO 8972 --- [InventoryApp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-17T12:48:30.244-07:00  INFO 8972 --- [InventoryApp] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:file:./data/inventory-app]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: INVENTORY-APP/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-17T12:48:30.809-07:00  INFO 8972 --- [InventoryApp] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-17T12:48:30.843-07:00  INFO 8972 --- [InventoryApp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-17T12:48:30.900-07:00  INFO 8972 --- [InventoryApp] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-17T12:48:31.425-07:00  WARN 8972 --- [InventoryApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-17T12:48:31.552-07:00  INFO 8972 --- [InventoryApp] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-10-17T12:48:32.029-07:00  INFO 8972 --- [InventoryApp] [restartedMain] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/inventory-app'
+2026-10-17T12:48:32.070-07:00  INFO 8972 --- [InventoryApp] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-17T12:48:32.075-07:00  INFO 8972 --- [InventoryApp] [restartedMain] c.e.i.InventoryAppApplication            : Started InventoryAppApplication in 3.806 seconds (process running for 4.274)
+2026-10-17T12:48:32.222-07:00  INFO 8972 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists admin
+2026-10-17T12:48:32.281-07:00  INFO 8972 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists user
+2026-10-17T12:48:32.339-07:00  INFO 8972 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists associate
+2026-10-17T12:48:32.396-07:00  INFO 8972 --- [InventoryApp] [restartedMain] c.e.inventoryapp.services.UserService    : User already exists manager
+2026-10-17T12:48:32.397-07:00  WARN 8972 --- [InventoryApp] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-17T12:48:32.397-07:00  WARN 8972 --- [InventoryApp] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-17T12:49:25.953-07:00  INFO 8972 --- [InventoryApp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-17T12:49:25.953-07:00  INFO 8972 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-17T12:49:25.954-07:00  INFO 8972 --- [InventoryApp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-17T12:50:25.026-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.027-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.043-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.044-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.069-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.069-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.078-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.079-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.084-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.084-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.086-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.086-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.087-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.088-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.091-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.091-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.092-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.093-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.094-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.095-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.096-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.101-07:00  WARN 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.springdoc.core.utils.SpringDocUtils    : Json Processing Exception occurred: Cannot construct instance of `java.util.HashSet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('integer')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 9] (through reference chain: io.swagger.v3.oas.models.media.JsonSchema["type"])
+2026-10-17T12:50:25.110-07:00 ERROR 8972 --- [InventoryApp] [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "io.swagger.v3.oas.models.media.Schema.getProperties()" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "io.swagger.v3.oas.models.media.Schema.getProperties()" is null
+	at org.springdoc.core.utils.SpringDocDataRestUtils.updateResponseSchemaEmbedded(SpringDocDataRestUtils.java:297) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at org.springdoc.core.utils.SpringDocDataRestUtils.updateResponseSchema(SpringDocDataRestUtils.java:278) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at org.springdoc.core.utils.SpringDocDataRestUtils.lambda$updateApiResponse$3(SpringDocDataRestUtils.java:173) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at java.base/java.util.HashMap$KeySet.forEach(HashMap.java:1017) ~[na:na]
+	at org.springdoc.core.utils.SpringDocDataRestUtils.lambda$updateApiResponse$4(SpringDocDataRestUtils.java:171) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:834) ~[na:na]
+	at org.springdoc.core.utils.SpringDocDataRestUtils.updateApiResponse(SpringDocDataRestUtils.java:166) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at org.springdoc.core.utils.SpringDocDataRestUtils.lambda$customise$0(SpringDocDataRestUtils.java:150) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:987) ~[na:na]
+	at org.springdoc.core.utils.SpringDocDataRestUtils.lambda$customise$1(SpringDocDataRestUtils.java:150) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) ~[na:na]
+	at org.springdoc.core.utils.SpringDocDataRestUtils.lambda$customise$2(SpringDocDataRestUtils.java:145) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:803) ~[na:na]
+	at org.springdoc.core.utils.SpringDocDataRestUtils.customise(SpringDocDataRestUtils.java:143) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at org.springdoc.core.providers.SpringRepositoryRestResourceProvider.customize(SpringRepositoryRestResourceProvider.java:292) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at org.springdoc.webmvc.api.OpenApiResource.lambda$getPaths$1(OpenApiResource.java:161) ~[springdoc-openapi-starter-webmvc-api-3.1.0.jar:3.1.0]
+	at java.base/java.util.Optional.ifPresent(Optional.java:178) ~[na:na]
+	at org.springdoc.webmvc.api.OpenApiResource.lambda$getPaths$4(OpenApiResource.java:158) ~[springdoc-openapi-starter-webmvc-api-3.1.0.jar:3.1.0]
+	at java.base/java.util.Optional.ifPresent(Optional.java:178) ~[na:na]
+	at org.springdoc.webmvc.api.OpenApiResource.getPaths(OpenApiResource.java:154) ~[springdoc-openapi-starter-webmvc-api-3.1.0.jar:3.1.0]
+	at org.springdoc.api.AbstractOpenApiResource.getOpenApi(AbstractOpenApiResource.java:404) ~[springdoc-openapi-starter-common-3.1.0.jar:3.1.0]
+	at org.springdoc.webmvc.api.OpenApiResource.openapiJson(OpenApiResource.java:129) ~[springdoc-openapi-starter-webmvc-api-3.1.0.jar:3.1.0]
+	at org.springdoc.webmvc.api.OpenApiWebMvcResource.openapiJson(OpenApiWebMvcResource.java:117) ~[springdoc-openapi-starter-webmvc-api-3.1.0.jar:3.1.0]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-11.0.24.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.24.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59) ~[tomcat-embed-websocket-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:245) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:239) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317) ~[spring-security-config-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-10-17T12:50:52.608-07:00  INFO 8972 --- [InventoryApp] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-17T12:50:52.611-07:00  INFO 8972 --- [InventoryApp] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-17T12:50:52.615-07:00  INFO 8972 --- [InventoryApp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-17T12:50:52.617-07:00  INFO 8972 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-17T12:50:52.621-07:00  INFO 8972 --- [InventoryApp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
