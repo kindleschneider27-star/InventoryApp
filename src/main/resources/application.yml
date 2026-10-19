@@ -16,4 +16,10 @@ logging:
       max-file-size: 10MB
       max-history: 30
 
-
+item:
+  security:
+    jwt:
+      secret: "${JWT_SECRET}"
+      issuer: "inventory-app"
+      audience: "inventory-app-api"
+      token-duration: "${JWT_DURATION:8h}"
