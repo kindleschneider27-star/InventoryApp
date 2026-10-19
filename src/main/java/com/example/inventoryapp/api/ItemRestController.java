@@ -5,12 +5,16 @@ import com.example.inventoryapp.config.ItemProperties;
 import com.example.inventoryapp.data.ItemRepository;
 import com.example.inventoryapp.domain.Item;
 import com.example.inventoryapp.domain.ItemType;
+import com.example.inventoryapp.domain.User;
 import com.example.inventoryapp.services.ItemService;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -59,5 +63,39 @@ public class ItemRestController {
 
         ItemResponseDTO response = ItemResponseDTO.from(item.get());
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping(consumes = "application/json")
+    public ResponseEntity<ItemResponseDTO> createItem(@Valid @RequestBody ItemCreateRequestDTO request,
+                                                      @AuthenticationPrincipal User user){
+        Item item = ItemRequestMapper.fromCreate(request);
+
+        Item savedItem = itemService.registerNewItem(item, user);
+
+        ItemResponseDTO response = ItemResponseDTO.from(savedItem);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @PatchMapping(path="/{id}", consumes = "application/json")
+    public ResponseEntity<ItemResponseDTO>patchItem(@PathVariable UUID id, @Valid @RequestBody ItemPatchRequestDTO request){
+
+        Optional<Item> updatedItem = itemService.patchUpdate(id,request);
+        if(updatedItem.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        ItemResponseDTO response = ItemResponseDTO.from(updatedItem.get());
+        return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteItem(@PathVariable UUID id){
+        boolean deleted = itemService.deleteItemById(id);
+
+        if(!deleted){
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.noContent().build();
     }
 }

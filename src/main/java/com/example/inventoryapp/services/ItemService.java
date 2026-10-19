@@ -1,5 +1,7 @@
 package com.example.inventoryapp.services;
 
+import com.example.inventoryapp.api.ItemPatchRequestDTO;
+import com.example.inventoryapp.api.ItemRequestMapper;
 import com.example.inventoryapp.data.ItemRepository;
 import com.example.inventoryapp.domain.Item;
 import com.example.inventoryapp.domain.ItemType;
@@ -133,6 +135,45 @@ public class ItemService {
         }
         return itemRepo.updateInventoryById(id, newInventory) > 0;
 
+    }
+
+    @Transactional
+    public Optional<Item> patchUpdate(UUID id, ItemPatchRequestDTO request) {
+        Optional<Item> lookupItem = itemRepo.findById(id);
+
+        if(lookupItem.isEmpty()){
+            return Optional.empty();
+        }
+
+        Item item = lookupItem.get();
+
+        if(request.getName() != null){
+            item.setName(request.getName());
+        }
+
+        if(request.getManufacturer() != null){
+            item.setManufacturer(request.getManufacturer());
+        }
+
+        if(request.getPrice() != null) {
+            item.setPrice(request.getPrice());
+        }
+
+        if(request.getInventory() != null) {
+            item.setInventory(request.getInventory());
+        }
+
+        if(request.getType() != null){
+            item.setType(request.getType());
+        }
+
+        if(request.getImage() != null){
+            item.setImage(ItemRequestMapper.fromImageRequest(request.getImage()));
+        }
+
+        Item updatedItem = itemRepo.save(item);
+
+        return Optional.of(updatedItem);
     }
 
 }
