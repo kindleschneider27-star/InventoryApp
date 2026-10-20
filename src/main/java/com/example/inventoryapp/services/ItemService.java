@@ -3,14 +3,17 @@ package com.example.inventoryapp.services;
 import com.example.inventoryapp.api.ItemPatchRequestDTO;
 import com.example.inventoryapp.api.ItemRequestMapper;
 import com.example.inventoryapp.data.ItemRepository;
+import com.example.inventoryapp.data.UserRepository;
 import com.example.inventoryapp.domain.Item;
 import com.example.inventoryapp.domain.ItemType;
+import com.example.inventoryapp.domain.User;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -19,13 +22,15 @@ import java.util.*;
 public class ItemService {
     private static final Logger logger = LoggerFactory.getLogger(ItemService.class);
     private final ItemRepository itemRepo;
+    private final UserRepository userRepo;
 
-    public ItemService(ItemRepository ir) {
+    public ItemService(ItemRepository ir, UserRepository ur) {
         itemRepo = ir;
+        userRepo = ur;
     }
 
     @Transactional
-    public Item registerNewItem(Item item) {
+    public Item registerNewItem(Item item, String username) {
         if(itemRepo.existsById(item.getId())){
             throw new IllegalArgumentException("Item already exists");
         }
@@ -34,6 +39,9 @@ public class ItemService {
             imageName = item.getName() + imageName.substring(imageName.lastIndexOf('.'));
             item.getImage().setImageName(imageName);
         }
+
+        User owner = userRepo.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
         item = itemRepo.save(item);
 
         logger.info("Item registered : {}", item);
@@ -138,6 +146,7 @@ public class ItemService {
     }
 
     @Transactional
+    @PreAuthorize("hasAnyRole('MNGR', 'ADMIN')")
     public Optional<Item> patchUpdate(UUID id, ItemPatchRequestDTO request) {
         Optional<Item> lookupItem = itemRepo.findById(id);
 

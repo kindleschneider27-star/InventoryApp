@@ -1,5 +1,7 @@
 package com.example.inventoryapp.config;
 
+import com.example.inventoryapp.data.TokenRepository;
+import com.example.inventoryapp.security.ApiTokenValidator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.core.DelegatingOAuth2TokenValidator;

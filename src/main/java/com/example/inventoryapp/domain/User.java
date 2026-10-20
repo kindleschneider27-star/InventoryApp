@@ -73,11 +73,11 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public String getFullName() {
+    public String getFullname() {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    public void setFullname(String fullName) {
         this.fullName = fullName;
     }
 

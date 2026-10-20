@@ -7,6 +7,7 @@ import com.example.inventoryapp.domain.Item;
 import com.example.inventoryapp.domain.ItemType;
 import com.example.inventoryapp.domain.User;
 import com.example.inventoryapp.services.ItemService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,6 +16,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -54,6 +56,7 @@ public class ItemRestController {
     }
 
     @GetMapping("/id")
+    @SecurityRequirement(name="bearerAuth")
     public ResponseEntity<ItemResponseDTO> getItem(@PathVariable UUID id){
         Optional<Item> item = itemService.getItemById(id);
 
@@ -66,17 +69,20 @@ public class ItemRestController {
     }
 
     @PostMapping(consumes = "application/json")
+    @SecurityRequirement(name="bearerAuth")
     public ResponseEntity<ItemResponseDTO> createItem(@Valid @RequestBody ItemCreateRequestDTO request,
-                                                      @AuthenticationPrincipal User user){
+                                                      @AuthenticationPrincipal Jwt jwt){
         Item item = ItemRequestMapper.fromCreate(request);
+        String username = jwt.getSubject();
 
-        Item savedItem = itemService.registerNewItem(item, user);
+        Item savedItem = itemService.registerNewItem(item, username);
 
         ItemResponseDTO response = ItemResponseDTO.from(savedItem);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PatchMapping(path="/{id}", consumes = "application/json")
+    @SecurityRequirement(name="bearerAuth")
     public ResponseEntity<ItemResponseDTO>patchItem(@PathVariable UUID id, @Valid @RequestBody ItemPatchRequestDTO request){
 
         Optional<Item> updatedItem = itemService.patchUpdate(id,request);
@@ -89,6 +95,7 @@ public class ItemRestController {
     }
 
     @DeleteMapping("/{id}")
+    @SecurityRequirement(name="bearerAuth")
     public ResponseEntity<Void> deleteItem(@PathVariable UUID id){
         boolean deleted = itemService.deleteItemById(id);
 

@@ -1,0 +1,71 @@
+package com.example.inventoryapp.security;
+
+import com.example.inventoryapp.api.LoginRequestDTO;
+import com.example.inventoryapp.api.TokenResponseDTO;
+import com.example.inventoryapp.api.UserRegistrationRequestDTO;
+import com.example.inventoryapp.api.UserResponseDTO;
+import com.example.inventoryapp.domain.User;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.naming.AuthenticationException;
+import java.util.Optional;
+import java.util.UUID;
+
+@RestController
+@RequestMapping("/api/auth")
+public class ApiAuthController {
+    private final ApiAuthService authService;
+
+    public ApiAuthController(ApiAuthService aas) {
+        this.authService = aas;
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<TokenResponseDTO> login(@Valid @RequestBody LoginRequestDTO request) {
+        try{
+            TokenResponseDTO response = authService.login(request);
+            return ResponseEntity.ok(response);
+        }
+
+        catch(AuthenticationException e){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
+
+    @PostMapping("/logout")
+    @SecurityRequirement(name="bearerAuth")
+    public ResponseEntity<Void> logout(@AuthenticationPrincipal Jwt jwt) {
+        UUID tokenId = UUID.fromString(jwt.getId());
+
+        authService.revokeToken(tokenId);
+
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<UserResponseDTO> register(@Valid @RequestBody UserRegistrationRequestDTO request) {
+        try {
+            Optional<User> registeredUser = authService.register(request);
+
+            // username already exists - blank
+            if (registeredUser.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            }
+
+            return ResponseEntity.status(HttpStatus.CREATED).body(UserResponseDTO.from(registeredUser.get()));
+
+        }
+        catch(IllegalArgumentException ex) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+}

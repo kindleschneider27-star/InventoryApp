@@ -53,7 +53,7 @@ public class RegisterItemController {
         }
 
         try{
-            Item addedItem = itemService.registerNewItem(item);
+            Item addedItem = itemService.registerNewItem(item, user.getUsername());
             return "redirect:/view/current/" + addedItem.getId();
         }
         catch (IllegalArgumentException e){
