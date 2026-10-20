@@ -1,10 +1,7 @@
 package com.example.inventoryapp.api;
 
-import com.example.inventoryapp.domain.Image;
+
 import com.example.inventoryapp.domain.ItemType;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -14,8 +11,9 @@ public class ItemCreateRequestDTO {
     private String name;
     @NotBlank(message= "A manufacturer is required")
     private String manufacturer;
+    @NotNull(message= "Price is required")
+    @Positive(message= "Price must be positive")
     private double price;
-    @Positive(message= "A price is required")
     private int inventory;
     @NotNull(message = "Item type required")
     private ItemType type;

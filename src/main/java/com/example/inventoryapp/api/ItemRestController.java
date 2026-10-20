@@ -24,7 +24,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping(path="/api/items", produces = "application/json")
-@CrossOrigin(origins="http:///localhost:3000")
+@CrossOrigin(origins="http://localhost:3000")
 public class ItemRestController {
     private final ItemService itemService;
     private final ItemProperties itemProperties;
@@ -52,10 +52,10 @@ public class ItemRestController {
         Pageable pageable = PageRequest.of(page, itemProperties.getPageSize(),
                 Sort.by("name").ascending().and(Sort.by("id")));
 
-        return itemService.searchItems(name, type, manufacturer, pageable).map(ItemResponseDTO::from);
+        return itemService.searchItems(name, manufacturer, type, pageable).map(ItemResponseDTO::from);
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     @SecurityRequirement(name="bearerAuth")
     public ResponseEntity<ItemResponseDTO> getItem(@PathVariable UUID id){
         Optional<Item> item = itemService.getItemById(id);

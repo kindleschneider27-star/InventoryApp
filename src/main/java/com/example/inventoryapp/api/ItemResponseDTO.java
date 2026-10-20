@@ -22,7 +22,7 @@ public class ItemResponseDTO {
 
     public ItemResponseDTO() {}
 
-    public static ItemResponseDTO create(Item item) {
+    public static ItemResponseDTO from(Item item) {
         ItemResponseDTO response = new ItemResponseDTO();
 
         response.setId(item.getId());

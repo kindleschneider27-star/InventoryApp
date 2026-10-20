@@ -27,7 +27,6 @@ public class SecurityConfig {
     @Bean
     public JwtAuthenticationConverter jwtAuthenticationConverter(){
         JwtGrantedAuthoritiesConverter authoritiesConverter = new JwtGrantedAuthoritiesConverter();
-        authoritiesConverter.setAuthorityPrefix("roles");
         authoritiesConverter.setAuthorityPrefix("");
         JwtAuthenticationConverter authenticationConverter = new JwtAuthenticationConverter();
         authenticationConverter.setJwtGrantedAuthoritiesConverter(authoritiesConverter);
@@ -38,6 +37,8 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+    @Bean
     @Order(1)
     public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http, JwtAuthenticationConverter jwtConverter) throws Exception {
         return http.securityMatcher("/api/**")
@@ -47,15 +48,14 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize->authorize
                         .requestMatchers(HttpMethod.POST,
                         "/api/auth/login", "/api/auth/logout", "/api/auth/register").permitAll()
-                .requestMatchers(HttpMethod.GET,"/api/animals/**").permitAll()
+                .requestMatchers(HttpMethod.GET,"/api/items/**").permitAll()
                         .anyRequest() .authenticated())
                 .oauth2ResourceServer(server->server.jwt(jwt->jwt
                         .jwtAuthenticationConverter(jwtConverter))).build();
 
     }
-
-    @Order(2)
     @Bean
+    @Order(2)
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests((authorize) -> authorize

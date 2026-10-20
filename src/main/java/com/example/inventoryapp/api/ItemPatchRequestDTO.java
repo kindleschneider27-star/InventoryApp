@@ -8,8 +8,8 @@ import jakarta.validation.constraints.Positive;
 public class ItemPatchRequestDTO {
     private String name;
     private String manufacturer;
-    private double price;
-    private int inventory;
+    private Double price;
+    private Integer inventory;
     private ItemType type;
     private ImageRequestDTO image;
 
