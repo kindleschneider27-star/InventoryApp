@@ -16,20 +16,24 @@ public class ItemResponseDTO {
     private String name;
     private String manufacturer;
     private double price;
-    private int inventory;
+    private Integer inventory;
     private ItemType type;
     private ImageResponseDTO image;
 
     public ItemResponseDTO() {}
 
     public static ItemResponseDTO from(Item item) {
+        return from(item, false);
+    }
+
+    public static ItemResponseDTO from(Item item, boolean includeInventory) {
         ItemResponseDTO response = new ItemResponseDTO();
 
         response.setId(item.getId());
         response.setName(item.getName());
         response.setManufacturer(item.getManufacturer());
         response.setPrice(item.getPrice());
-        response.setInventory(item.getInventory());
+        response.setInventory(includeInventory ? item.getInventory() : null);
         response.setType(item.getType());
         response.setImage(ImageResponseDTO.from(item.getImage()));
 

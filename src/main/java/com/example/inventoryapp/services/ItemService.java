@@ -30,6 +30,7 @@ public class ItemService {
     }
 
     @Transactional
+    @PreAuthorize("hasAnyRole('MNGR','ADMIN')")
     public Item registerNewItem(Item item, String username) {
         if(itemRepo.existsById(item.getId())){
             throw new IllegalArgumentException("Item already exists");
@@ -40,7 +41,6 @@ public class ItemService {
             item.getImage().setImageName(imageName);
         }
 
-        User owner = userRepo.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         item = itemRepo.save(item);
 

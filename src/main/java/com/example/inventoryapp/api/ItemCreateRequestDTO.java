@@ -13,7 +13,7 @@ public class ItemCreateRequestDTO {
     private String manufacturer;
     @NotNull(message= "Price is required")
     @Positive(message= "Price must be positive")
-    private double price;
+    private Double price;
     private int inventory;
     @NotNull(message = "Item type required")
     private ItemType type;

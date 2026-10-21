@@ -57,7 +57,8 @@ public class ItemRestController {
 
     @GetMapping("/{id}")
     @SecurityRequirement(name="bearerAuth")
-    public ResponseEntity<ItemResponseDTO> getItem(@PathVariable UUID id){
+    public ResponseEntity<ItemResponseDTO> getItem(@PathVariable UUID id, @AuthenticationPrincipal Jwt jwt) {
+            boolean includeInventory = jwt != null;
         Optional<Item> item = itemService.getItemById(id);
 
         if(item.isEmpty()){
@@ -65,7 +66,7 @@ public class ItemRestController {
         }
 
         ItemResponseDTO response = ItemResponseDTO.from(item.get());
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(ItemResponseDTO.from(item.get(), includeInventory));
     }
 
     @PostMapping(consumes = "application/json")
@@ -104,5 +105,17 @@ public class ItemRestController {
         }
 
         return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping("/{id}/inventory")
+    @SecurityRequirement(name="bearerAuth")
+    public ResponseEntity<ItemResponseDTO> updateInventory(@PathVariable UUID id,
+                                                           @RequestBody InventoryUpdateRequestDTO request) {
+        if(!itemService.updateInventory(id, request.getInventory())){
+            return ResponseEntity.notFound().build();
+        }
+        return itemService.getItemById(id)
+                .map(item -> ResponseEntity.ok(ItemResponseDTO.from(item, true)))
+                .orElse(ResponseEntity.notFound().build());
     }
 }

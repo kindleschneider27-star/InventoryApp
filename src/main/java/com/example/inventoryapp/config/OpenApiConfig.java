@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @OpenAPIDefinition(
-        info = @Info(title="API",
-                version="0",
+        info = @Info(title="Inventory App API",
+                version="1.0",
                 description="API"))
 @SecurityScheme(
         name="bearerAuth",
