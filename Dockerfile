@@ -1,5 +1,5 @@
 # Stage 1: Build the Spring Boot application
-FROM maven:3.9-eclipse-temurin-25 AS build
+FROM maven:3.9-eclipse-temurin-26 AS build
 
 WORKDIR /workspace
 
@@ -14,7 +14,7 @@ RUN mvn clean package -DskipTests
 RUN cp target/*.jar target/application.jar
 
 # Stage 2: Run the completed application
-FROM eclipse-temurin:25-jre
+FROM eclipse-temurin:26-jre
 WORKDIR /app
 
 # Create a non-root account for the application
