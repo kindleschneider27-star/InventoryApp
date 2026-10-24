@@ -32,7 +32,10 @@ public class ItemService {
     @Transactional
     @PreAuthorize("hasAnyRole('MNGR','ADMIN')")
     public Item registerNewItem(Item item, String username) {
-        if(itemRepo.existsById(item.getId())){
+        if (item.getId() == null) {
+            item.setId(UUID.randomUUID());
+        }
+        else if(itemRepo.existsById(item.getId())){
             throw new IllegalArgumentException("Item already exists");
         }
         if(item.hasImage()){

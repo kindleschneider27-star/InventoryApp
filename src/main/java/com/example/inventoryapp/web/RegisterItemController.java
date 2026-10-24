@@ -10,6 +10,8 @@ import com.example.inventoryapp.domain.ItemType;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.UUID;
 
@@ -45,7 +47,7 @@ public class RegisterItemController {
     }
 
     @PostMapping
-    public String processItemRegister (@Valid Item item, Errors errors) {
+    public String processItemRegister (@Valid Item item, Errors errors, @AuthenticationPrincipal UserDetails user) {
         logger.debug("Item registered : {}", item);
 
         if (errors.hasErrors()) {

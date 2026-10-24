@@ -13,7 +13,7 @@ public class ImageResponseDTO {
 
     public ImageResponseDTO() {}
 
-    public ImageResponseDTO from(Image image) {
+    public static ImageResponseDTO from(Image image) {
         if (image == null || image.getContents() == null || image.getContents().length == 0) {
             return null;
         }

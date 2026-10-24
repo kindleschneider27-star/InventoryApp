@@ -33,7 +33,7 @@ public class ItemResponseDTO {
         response.setName(item.getName());
         response.setManufacturer(item.getManufacturer());
         response.setPrice(item.getPrice());
-        response.setInventory(includeInventory ? item.getInventory() : null);
+        response.setInventory(includeInventory ? Integer.valueOf(item.getInventory()) : null);
         response.setType(item.getType());
         response.setImage(ImageResponseDTO.from(item.getImage()));
 
@@ -72,11 +72,11 @@ public class ItemResponseDTO {
         this.price = price;
     }
 
-    public int getInventory() {
+    public Integer getInventory() {
         return inventory;
     }
 
-    public void setInventory(int inventory) {
+    public void setInventory(Integer inventory) {
         this.inventory = inventory;
     }
 
