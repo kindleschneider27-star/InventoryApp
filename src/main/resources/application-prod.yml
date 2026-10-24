@@ -2,7 +2,7 @@ spring:
   thymeleaf:
     cache: false #will be true
   datasource:
-    url: "jdbc:mysql://localhost:${MYSQL_PORT_FORWARD}/${MYSQL_DATABASE}"
+    url: "jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}"
     username: ${MYSQL_USER}
     password: ${MYSQL_PASSWORD}
 
