@@ -15,7 +15,7 @@ public class UserResponseDTO {
 
         response.setId(user.getId());
         response.setUsername(user.getUsername());
-        response.setFullname(user.getFullname());
+        response.setFullname(user.getFullName());
 
         return response;
     }
