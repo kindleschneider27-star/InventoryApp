@@ -13,7 +13,7 @@ public class ItemStatusEventProducer {
     private final MessagingProperties properties;
 
     public ItemStatusEventProducer(KafkaTemplate<String, ItemStatusEvent> kafkaTemplate, MessagingProperties properties) {
-        kafkaTemplate = template;
+        this.kafkaTemplate = kafkaTemplate;
         this.properties = properties;
     }
 

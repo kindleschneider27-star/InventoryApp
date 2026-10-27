@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: ${KAFKA_BOOTSRAP_SERVERS:localhost:9092}
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -13,6 +13,18 @@ spring:
 
       properties:
         spring.json.trusted.packages: "com.example.inventoryapp.messaging"
+  mail:
+    host: ${MAIL_HOST:sandbox.smtp.mailtrap.io}
+    port: ${MAIL_PORT:2525}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+
+    properties:
+      "[mail.smtp.auth]": true
+      "[mail.smtp.starttls.enable]": true
+      "[mail.smtp.connectiontimeout]": 5000
+      "[mail.smtp.timeout]": 5000
+      "[mail.smtp.writetimeout]": 5000
 
 
   application:
@@ -45,3 +57,5 @@ item:
       email-group: ${KAFKA_EMAIL_GROUP:inventory-email-notifications}
       partitions: ${KAFKA_TOPIC_PARTITIONS:3}
       replicas: ${KAFKA_TOPIC_REPLICAS:1}
+    email:
+      from-address: ${MAIL_FROM:no-reply@inventoryapp.local}
