@@ -1,5 +1,7 @@
 package com.example.inventoryapp.messaging;
 
+import com.example.inventoryapp.domain.Item;
+
 import java.util.UUID;
 
 public class ItemStatusEvent {
@@ -15,8 +17,18 @@ public class ItemStatusEvent {
     public ItemStatusEvent() {
     }
 
-//constructor?? from what though no lostpet
-    public String toStatusEmailTText() {
+    public static ItemStatusEvent fromItem(Item item, int lowInventoryThreshold) {
+        ItemStatusEvent event = new ItemStatusEvent();
+        event.setEventId(UUID.randomUUID());
+        event.setItemId(item.getId());
+        event.setItemName(item.getName());
+        event.setItemManufacturer(item.getManufacturer());
+        event.setItemInventory(item.getInventory());
+        event.setStatus(item.getInventory() < lowInventoryThreshold
+                ? ItemStatus.LOW : ItemStatus.GOOD);
+        return event;
+    }
+    public String toStatusEmailText() {
         return String.format("""
                 LOW INVENTORY ALERT
                 

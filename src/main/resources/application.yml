@@ -51,11 +51,11 @@ item:
       issuer: "inventory-app"
       audience: "inventory-app-api"
       token-duration: "${JWT_DURATION:8h}"
-    messaging:
+  messaging:
       item-status-topic: ${KAFKA_ITEM_STATUS_TOPIC:inventory-status-event}
       logging-group: ${KAFKA_LOGGING_GROUP:inventory-event-logger}
       email-group: ${KAFKA_EMAIL_GROUP:inventory-email-notifications}
       partitions: ${KAFKA_TOPIC_PARTITIONS:3}
       replicas: ${KAFKA_TOPIC_REPLICAS:1}
-    email:
+  email:
       from-address: ${MAIL_FROM:no-reply@inventoryapp.local}

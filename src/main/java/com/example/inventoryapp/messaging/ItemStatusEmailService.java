@@ -16,21 +16,19 @@ public class ItemStatusEmailService {
     private final EmailProperties emailProperties;
 
     public ItemStatusEmailService(JavaMailSender jms, UserRepository ur, EmailProperties ep) {
-        mailSender = jms;
-        userRepository = ur;
-        emailProperties = ep;
+        this.mailSender = jms;
+        this.userRepository = ur;
+        this.emailProperties = ep;
     }
 
     public void sendMessage(ItemStatusEvent event) {
-        String to="managers@myinventoryapp.com";
-
         SimpleMailMessage message = new SimpleMailMessage();
 
         message.setFrom(emailProperties.getFromAddress());
-        message.setTo(emailProperties.getFromAddress());
-        message.setBcc(to);
+        message.setTo("managers@myinventoryapp.com");
+        message.setBcc(emailProperties.getFromAddress());
         message.setSubject(event.getStatus().toString() + " - " + event.getItemName() + " - " + event.getItemInventory());
-        message.setText(event.toStatusEmailTText());
+        message.setText(event.toStatusEmailText());
 
         mailSender.send(message);
 

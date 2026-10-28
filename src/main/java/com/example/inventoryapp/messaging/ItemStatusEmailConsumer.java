@@ -14,7 +14,7 @@ public class ItemStatusEmailConsumer {
         emailService = is;
     }
 
-    @KafkaListener(topics = "${item.messaging.item-status-topic}", groupId = "${item.security.messaging.email-group}")
+    @KafkaListener(topics = "${KAFKA_ITEM_STATUS_TOPIC}", groupId = "${item.messaging.email-group}")
 
     public void receive(ItemStatusEvent event) {
         emailService.sendMessage(event);
