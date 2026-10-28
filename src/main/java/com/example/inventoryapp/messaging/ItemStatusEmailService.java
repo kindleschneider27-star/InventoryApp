@@ -4,6 +4,7 @@ import com.example.inventoryapp.config.EmailProperties;
 import com.example.inventoryapp.data.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,18 @@ public class ItemStatusEmailService {
     }
 
     public void sendMessage(ItemStatusEvent event) {
-        userRepository.findAllByOrderByCityIgnoreCaseAndStateIgnoreCase(event.get)
+        String to="managers@myinventoryapp.com";
+
+        SimpleMailMessage message = new SimpleMailMessage();
+
+        message.setFrom(emailProperties.getFromAddress());
+        message.setTo(emailProperties.getFromAddress());
+        message.setBcc(to);
+        message.setSubject(event.getStatus().toString() + " - " + event.getItemName() + " - " + event.getItemInventory());
+        message.setText(event.toStatusEmailTText());
+
+        mailSender.send(message);
+
+        logger.info("Sent email for {}", event.getEventId());
     }
 }

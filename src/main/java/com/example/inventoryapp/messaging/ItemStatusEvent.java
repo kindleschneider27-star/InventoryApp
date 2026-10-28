@@ -16,6 +16,19 @@ public class ItemStatusEvent {
     }
 
 //constructor?? from what though no lostpet
+    public String toStatusEmailTText() {
+        return String.format("""
+                LOW INVENTORY ALERT
+                
+                Status: %s
+                ItemName: %s
+                ItemId: %s
+                ItemInventory: %s
+                
+                Restock as soon as possible.
+                """, status, itemName, itemId, itemInventory);
+
+    }
 
     public UUID getEventId() {
         return eventId;
