@@ -15,6 +15,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import com.example.inventoryapp.config.ItemProperties;
+import com.example.inventoryapp.messaging.ItemStatusEvent;
+import com.example.inventoryapp.messaging.ItemStatusEventProducer;
 
 import java.util.*;
 
@@ -23,10 +26,15 @@ public class ItemService {
     private static final Logger logger = LoggerFactory.getLogger(ItemService.class);
     private final ItemRepository itemRepo;
     private final UserRepository userRepo;
+    private final ItemStatusEventProducer eventProducer;
+    private final ItemProperties itemProperties;
 
-    public ItemService(ItemRepository ir, UserRepository ur) {
+    public ItemService(ItemRepository ir, UserRepository ur,
+                       ItemStatusEventProducer ep, ItemProperties ip) {
         itemRepo = ir;
         userRepo = ur;
+        eventProducer = ep;
+        itemProperties = ip;
     }
 
     @Transactional
@@ -46,6 +54,8 @@ public class ItemService {
 
 
         item = itemRepo.save(item);
+
+        checkInventoryAndPublish(item);
 
         logger.info("Item registered : {}", item);
 
@@ -120,6 +130,7 @@ public class ItemService {
 
         item.setId(id);
         itemRepo.save(item);
+        checkInventoryAndPublish(item);
         logger.info("Item updated : {}", item);
         return true;
     }
@@ -144,7 +155,9 @@ public class ItemService {
             logger.info("Item not found : {}", id);
             return false;
         }
-        return itemRepo.updateInventoryById(id, newInventory) > 0;
+        itemRepo.updateInventoryById(id, newInventory);
+        checkInventoryAndPublish(itemRepo.findById(id).get());
+        return true;
 
     }
 
@@ -185,7 +198,18 @@ public class ItemService {
 
         Item updatedItem = itemRepo.save(item);
 
+        checkInventoryAndPublish(item);
+
+
         return Optional.of(updatedItem);
+    }
+
+    private void checkInventoryAndPublish(Item item) {
+        int threshold = itemProperties.getLowInventory();
+        if (item.getInventory() < threshold) {
+            eventProducer.send(ItemStatusEvent.fromItem(item, threshold));
+            logger.info("Low inventory event published for item {}", item.getId());
+        }
     }
 
 }

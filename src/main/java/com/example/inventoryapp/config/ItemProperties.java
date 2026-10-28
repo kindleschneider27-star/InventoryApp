@@ -18,5 +18,7 @@ public class ItemProperties {
     public int getLowInventory() {
         return lowInventory;
     }
-    public void setLowInventory(int lowInventory) {}
+    public void setLowInventory(int lowInventory) {
+        this.lowInventory = lowInventory;
+    }
 }
