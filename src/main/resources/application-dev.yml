@@ -22,5 +22,6 @@ logging:
 
 item:
   page-size: 2
+  low-inventory: 2
 
 

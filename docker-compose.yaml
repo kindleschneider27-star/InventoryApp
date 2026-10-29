@@ -15,8 +15,19 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
       JWT_DURATION: ${JWT_DURATION:-8h}
+      KAFKA_BOOTSTRAP_SERVERS: kafka:19092
+      KAFKA_ITEM_STATUS_TOPIC: ${KAFKA_ITEM_STATUS_TOPIC}
+      KAFKA_LOGGING_GROUP: ${KAFKA_LOGGING_GROUP}
+      KAFKA_EMAIL_GROUP: ${KAFKA_EMAIL_GROUP}
+      MAIL_HOST: ${MAIL_HOST}
+      MAIL_PORT: ${MAIL_PORT}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      MAIL_FROM: ${MAIL_FROM}
     depends_on:
       mysql:
+        condition: service_healthy
+      kafka:
         condition: service_healthy
     restart: unless-stopped
 
